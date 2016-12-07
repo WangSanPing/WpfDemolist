@@ -23,5 +23,33 @@ namespace WpfDemolist
         {
             InitializeComponent();
         }
+
+        public override void showVisualTree(DependencyObject element)
+        {
+            this.tree.Items.Clear();
+
+            this.processElement(element, null);
+        }
+
+        private void processElement(DependencyObject element, TreeViewItem previousItem)
+        {
+            TreeViewItem item = new TreeViewItem();
+            item.Header = element.GetType().Name;
+            item.IsExpanded = true;
+
+            if (previousItem == null)
+            {
+                this.tree.Items.Add(item);
+            }
+            else
+            {
+                previousItem.Items.Add(item);
+            }
+
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(element); i++)
+            {
+                processElement(VisualTreeHelper.GetChild(element, i), item);
+            }
+        }
     }
 }

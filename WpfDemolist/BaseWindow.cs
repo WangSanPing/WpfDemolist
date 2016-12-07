@@ -9,5 +9,8 @@ namespace WpfDemolist
 {
     public class BaseWindow : Window
     {
+        public BaseWindow() { }
+
+        public virtual void showVisualTree(DependencyObject element) { }
     }
 }

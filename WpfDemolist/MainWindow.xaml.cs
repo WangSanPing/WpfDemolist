@@ -37,6 +37,7 @@ namespace WpfDemolist
             Button btn = sender as Button;
             BaseWindow page = new BaseWindow();
 
+            // 简单工厂
             switch (btn.Content.ToString())
             {
                 case GlobalStaticStr.DemoControlTemplate:
@@ -44,6 +45,7 @@ namespace WpfDemolist
                     break;
                 case GlobalStaticStr.VisualTreeDisplay:
                     page = new VisualTreeDisplay();
+                    page.showVisualTree(this);
                     break;
             }
 

@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="VisualTreeDisplay" Height="300" Width="300">
     <Grid>
-
+        <TreeView x:Name="tree"></TreeView>
     </Grid>
 </local:BaseWindow>
