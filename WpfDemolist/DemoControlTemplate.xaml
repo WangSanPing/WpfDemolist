@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="DemoControlTemplate" Height="300" Width="300">
     <Window.Resources>
-        
+
     </Window.Resources>
     <Grid>
-        
+
     </Grid>
 </local:BaseWindow>
