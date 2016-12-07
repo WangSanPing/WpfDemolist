@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace WpfDemolist
 {
     /// <summary>
-    /// DemoControlTemplate.xaml 的交互逻辑
+    /// VisualTreeDisplay.xaml 的交互逻辑
     /// </summary>
-    public partial class DemoControlTemplate : BaseWindow
+    public partial class VisualTreeDisplay : BaseWindow
     {
-        public DemoControlTemplate()
+        public VisualTreeDisplay()
         {
             InitializeComponent();
         }

@@ -20,6 +20,7 @@ namespace WpfDemolist
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -32,8 +33,21 @@ namespace WpfDemolist
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            DemoControlTemplate window = new DemoControlTemplate();
-            window.Show();
+
+            Button btn = sender as Button;
+            BaseWindow page = new BaseWindow();
+
+            switch (btn.Content.ToString())
+            {
+                case GlobalStaticStr.DemoControlTemplate:
+                    page = new DemoControlTemplate();
+                    break;
+                case GlobalStaticStr.VisualTreeDisplay:
+                    page = new VisualTreeDisplay();
+                    break;
+            }
+
+            page.Show();
         }
     }
 }
