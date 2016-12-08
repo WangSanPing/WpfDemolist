@@ -56,10 +56,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BaseWindow.cs" />
+    <Compile Include="ControlsOfControlTemplate.xaml.cs">
+      <DependentUpon>ControlsOfControlTemplate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GlobalStaticStr.cs" />
     <Compile Include="VisualTreeDisplay.xaml.cs">
       <DependentUpon>VisualTreeDisplay.xaml</DependentUpon>
     </Compile>
+    <Page Include="ControlsOfControlTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DemoControlTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

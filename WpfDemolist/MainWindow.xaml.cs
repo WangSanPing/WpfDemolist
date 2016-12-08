@@ -48,6 +48,9 @@ namespace WpfDemolist
                     page = new VisualTreeDisplay();
                     page.showVisualTree(this);
                     break;
+                case (int)GlobalStaticStr.FunctionList.ControlsOfControlTemplate:
+                    page = new ControlsOfControlTemplate();
+                    break;
             }
 
             page.Show();

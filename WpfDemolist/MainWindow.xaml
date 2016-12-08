@@ -14,6 +14,9 @@
             <Button Height="40" Click="Button_Click" Tag="1">
                 VisualTreeHelper查看窗体可视化树
             </Button>
+            <Button Height="40" Click="Button_Click" Tag="2">
+                查看所有控件的原始ControlTemplate
+            </Button>
         </StackPanel>
     </Grid>
 </Window>

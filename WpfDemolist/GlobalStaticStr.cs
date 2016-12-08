@@ -14,7 +14,8 @@ namespace WpfDemolist
         public enum FunctionList
         {
             DemoControlTemplate = 0,
-            VisualTreeDisplay = 1
+            VisualTreeDisplay = 1,
+            ControlsOfControlTemplate = 2
         }
     }
 }
