@@ -8,11 +8,11 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <StackPanel>
-            <Button Height="40" Click="Button_Click">
-                DemoControlTemplate
+            <Button Height="40" Click="Button_Click" Tag="0">
+                简单控件模板DEMO
             </Button>
-            <Button Height="40" Click="Button_Click">
-                VisualTreeDisplay
+            <Button Height="40" Click="Button_Click" Tag="1">
+                VisualTreeHelper查看窗体可视化树
             </Button>
         </StackPanel>
     </Grid>

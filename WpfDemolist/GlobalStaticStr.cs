@@ -10,5 +10,11 @@ namespace WpfDemolist
     {
         public const string DemoControlTemplate = "DemoControlTemplate";
         public const string VisualTreeDisplay = "VisualTreeDisplay";
+
+        public enum FunctionList
+        {
+            DemoControlTemplate = 0,
+            VisualTreeDisplay = 1
+        }
     }
 }

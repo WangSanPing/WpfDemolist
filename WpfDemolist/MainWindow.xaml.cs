@@ -35,15 +35,16 @@ namespace WpfDemolist
         {
 
             Button btn = sender as Button;
+            int tag = Convert.ToInt32(btn.Tag);
             BaseWindow page = new BaseWindow();
 
             // 简单工厂
-            switch (btn.Content.ToString())
+            switch (tag)
             {
-                case GlobalStaticStr.DemoControlTemplate:
+                case (int)GlobalStaticStr.FunctionList.DemoControlTemplate:
                     page = new DemoControlTemplate();
                     break;
-                case GlobalStaticStr.VisualTreeDisplay:
+                case (int)GlobalStaticStr.FunctionList.VisualTreeDisplay:
                     page = new VisualTreeDisplay();
                     page.showVisualTree(this);
                     break;
