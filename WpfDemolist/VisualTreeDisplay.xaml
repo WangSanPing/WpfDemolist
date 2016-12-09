@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfDemolist"
         mc:Ignorable="d"
-        Title="VisualTreeDisplay" Height="300" Width="300">
+        Title="VisualTreeDisplay" Width="320">
     <Grid>
-        <TreeView x:Name="tree"></TreeView>
+        <TreeView x:Name="tree" Width="300" HorizontalAlignment="Center"></TreeView>
     </Grid>
 </local:BaseWindow>

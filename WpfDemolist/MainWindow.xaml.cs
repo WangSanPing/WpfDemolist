@@ -24,6 +24,7 @@ namespace WpfDemolist
         public MainWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
         /// <summary>

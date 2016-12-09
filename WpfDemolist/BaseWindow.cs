@@ -9,7 +9,12 @@ namespace WpfDemolist
 {
     public class BaseWindow : Window
     {
-        public BaseWindow() { }
+        public BaseWindow()
+        {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            Height = 400;
+            Width = 600;
+        }
 
         public virtual void showVisualTree(DependencyObject element) { }
     }

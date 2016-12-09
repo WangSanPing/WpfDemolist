@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfDemolist"
         mc:Ignorable="d"
-        Title="ControlsOfControlTemplate" Height="400" Width="600" Loaded="BaseWindow_Loaded">
+        Title="ControlsOfControlTemplate"  Loaded="BaseWindow_Loaded">
     <Grid x:Name="grid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="230"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <ListBox Grid.Column="0" x:Name="list" SelectionChanged="list_SelectionChanged"></ListBox>
