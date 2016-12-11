@@ -59,11 +59,20 @@
     <Compile Include="ControlsOfControlTemplate.xaml.cs">
       <DependentUpon>ControlsOfControlTemplate.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\DataGridExtensions.cs" />
+    <Compile Include="Controls\DataGridSelectColumn.xaml.cs">
+      <DependentUpon>DataGridSelectColumn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MarkObject.cs" />
     <Compile Include="GlobalStaticStr.cs" />
     <Compile Include="VisualTreeDisplay.xaml.cs">
       <DependentUpon>VisualTreeDisplay.xaml</DependentUpon>
     </Compile>
     <Page Include="ControlsOfControlTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataGridSelectColumn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
