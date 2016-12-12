@@ -16,7 +16,7 @@
         <GradientStop Color="Blue" Offset="1"></GradientStop>
     </RadialGradientBrush>
 
-    <RadialGradientBrush x:Key="Border" RadiusX="1" RadiusY="5" GradientOrigin="0.5 0.3" >
+    <RadialGradientBrush x:Key="BorderBrush" RadiusX="1" RadiusY="5" GradientOrigin="0.5 0.3" >
         <GradientStop Color="White" Offset="0"></GradientStop>
         <GradientStop Color="Blue" Offset="1"></GradientStop>
     </RadialGradientBrush>
@@ -25,7 +25,7 @@
     <ControlTemplate x:Key="GradientButtonTemplate"
                      TargetType="{x:Type Button}">
         <Border Name="Border" 
-                BorderBrush="{StaticResource Border}" 
+                BorderBrush="{StaticResource BorderBrush}" 
                 BorderThickness="2"
                 CornerRadius="2"
                 Background="{StaticResource DefaultBackground}"
@@ -37,22 +37,45 @@
             </Grid>
         </Border>
         <ControlTemplate.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter TargetName="Border" Property="Background" 
-                        Value="{StaticResource HighlightBackground}"></Setter>
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter TargetName="Border" Property="Background"
-                        Value="{StaticResource PressedBackground}"></Setter>
-            </Trigger>
-            <Trigger Property="IsEnabled" Value="False">
-                <Setter TargetName="Border" Property="Background"
-                        Value="{StaticResource DisabledBackground}"></Setter>
-            </Trigger>
             <Trigger Property="IsKeyboardFocused" Value="True">
                 <Setter TargetName="FocusCue" Property="Visibility"
                         Value="Visible"></Setter>
             </Trigger>
+            <Trigger  Property="IsMouseOver" Value="True">
+                <Setter  Property="Background" TargetName="Border"
+                        Value="{StaticResource HighlightBackground}"></Setter>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter  Property="Background" TargetName="Border"
+                        Value="{StaticResource PressedBackground}"></Setter>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter  Property="Background" TargetName="Border"
+                        Value="{StaticResource DisabledBackground}"></Setter>
+            </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
+
+    <!--应用按钮模板的Style-->
+    <Style x:Key="CustomButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Control.Template"
+                Value="{StaticResource GradientButtonTemplate}"></Setter>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"></Setter>
+        <Setter Property="Background" Value="{StaticResource DefaultBackground}"></Setter>
+        <Setter Property="TextBlock.Foreground" Value="White"></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter  Property="Background" 
+                        Value="{StaticResource HighlightBackground}"></Setter>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter  Property="Background"
+                        Value="{StaticResource PressedBackground}"></Setter>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter  Property="Background"
+                        Value="{StaticResource DisabledBackground}"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>
