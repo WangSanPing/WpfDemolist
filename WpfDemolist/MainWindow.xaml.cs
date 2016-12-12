@@ -27,7 +27,6 @@ namespace WpfDemolist
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
-
         }
 
         /// <summary>
@@ -37,7 +36,6 @@ namespace WpfDemolist
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
             Button btn = sender as Button;
             int tag = Convert.ToInt32(btn.Tag);
             BaseWindow page = new BaseWindow();
@@ -45,22 +43,27 @@ namespace WpfDemolist
             // 简单工厂
             switch (tag)
             {
-                case (int)GlobalStaticStr.FunctionList.DemoControlTemplate:
+                case (int)GlobalStaticStr.ControlTemplateList.DemoControlTemplate:
                     page = new DemoControlTemplate();
                     break;
-                case (int)GlobalStaticStr.FunctionList.VisualTreeDisplay:
+                case (int)GlobalStaticStr.ControlTemplateList.VisualTreeDisplay:
                     page = new VisualTreeDisplay();
                     page.showVisualTree(this);
                     break;
-                case (int)GlobalStaticStr.FunctionList.ControlsOfControlTemplate:
+                case (int)GlobalStaticStr.ControlTemplateList.ControlsOfControlTemplate:
                     page = new ControlsOfControlTemplate();
                     break;
-                case (int)GlobalStaticStr.FunctionList.CustomListBox:
+                case (int)GlobalStaticStr.ControlTemplateList.CustomListBox:
                     page = new CustomListBox();
                     break;
             }
 
             page.Show();
+        }
+
+        private void CustomControl_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

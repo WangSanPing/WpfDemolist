@@ -5,10 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfDemolist"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="500" Width="600">
 
     <Grid>
-        <StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="10" Grid.Column="0" Grid.Row="0">
+            <TextBlock Height="30" VerticalAlignment="Bottom" TextBlock.FontSize="15"  HorizontalAlignment="Left" Text="控件模板相关"> </TextBlock>
             <Button Height="40" Click="Button_Click" Tag="0" Template="{StaticResource GradientButtonTemplate}">
                 简单控件模板DEMO
             </Button>
@@ -22,5 +31,13 @@
                 自定义Listbox
             </Button>
         </StackPanel>
+        <StackPanel Margin="10" Grid.Column="1" Grid.Row="0">
+            <TextBlock Height="30" VerticalAlignment="Bottom" TextBlock.FontSize="15"  HorizontalAlignment="Left"
+                       Text="自定义控件"></TextBlock>
+            <Button Height="40" x:Name="CustomControl" Click="CustomControl_Click"  Tag="0" >
+                自定义控件
+            </Button>
+        </StackPanel>
+
     </Grid>
 </Window>

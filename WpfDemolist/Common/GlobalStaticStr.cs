@@ -8,10 +8,10 @@ namespace WpfDemolist.Common
 {
     public static class GlobalStaticStr
     {
-        public const string DemoControlTemplate = "DemoControlTemplate";
-        public const string VisualTreeDisplay = "VisualTreeDisplay";
-
-        public enum FunctionList
+        /// <summary>
+        /// 控件模板用
+        /// </summary>
+        public enum ControlTemplateList
         {
             DemoControlTemplate = 0,
             VisualTreeDisplay = 1,
