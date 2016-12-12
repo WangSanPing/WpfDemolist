@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfDemolist.Common;
 using WpfDemolist.ControlTemplateList;
+using WpfDemolist.CustomControlDemo;
 
 namespace WpfDemolist
 {
@@ -63,7 +64,8 @@ namespace WpfDemolist
 
         private void CustomControl_Click(object sender, RoutedEventArgs e)
         {
-
+            ColorPickerDemo page = new ColorPickerDemo();
+            page.Show();
         }
     }
 }

@@ -10,19 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CustomControl
+namespace WpfDemolist.CustomControlDemo
 {
     /// <summary>
-    /// UserControl1.xaml 的交互逻辑
+    /// ColorPickerDemo.xaml 的交互逻辑
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class ColorPickerDemo : Window
     {
-        public UserControl1()
+        public ColorPickerDemo()
         {
             InitializeComponent();
+        }
+
+        private void colorPicker_ColorChanged(object sender, RoutedPropertyChangedEventArgs<Color> e)
+        {
+            if (lblColor != null) lblColor.Text = "The new color is " + e.NewValue.ToString();
         }
     }
 }
