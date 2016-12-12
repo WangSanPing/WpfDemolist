@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:WpfDemolist"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+
     <Grid>
         <StackPanel>
             <Button Height="40" Click="Button_Click" Tag="0" Template="{StaticResource GradientButtonTemplate}">
@@ -16,6 +17,9 @@
             </Button>
             <Button Height="40" Click="Button_Click" Tag="2">
                 查看所有控件的原始ControlTemplate
+            </Button>
+            <Button Height="40" Click="Button_Click" Tag="3">
+                自定义Listbox
             </Button>
         </StackPanel>
     </Grid>

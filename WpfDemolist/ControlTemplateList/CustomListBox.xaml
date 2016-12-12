@@ -1,0 +1,30 @@
+﻿<local:BaseWindow x:Class="WpfDemolist.ControlTemplateList.CustomListBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDemolist"
+        mc:Ignorable="d"
+        Title="CustomListBox" Height="150" Width="300">
+    <Window.Resources>
+        <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource CustomListBoxItem}">
+        </Style>
+        <Style TargetType="{x:Type ScrollBar}" BasedOn="{StaticResource CustomScrollBar}"></Style>
+    </Window.Resources>
+    <Grid>
+        <ListBox Style="{StaticResource CustomListBox}" >
+            <ListBoxItem>One</ListBoxItem>
+            <ListBoxItem>Two</ListBoxItem>
+            <ListBoxItem>Three</ListBoxItem>
+            <ListBoxItem>Four</ListBoxItem>
+            <ListBoxItem>Five</ListBoxItem>
+            <ListBoxItem>Six</ListBoxItem>
+            <ListBoxItem>Seven</ListBoxItem>
+            <ListBoxItem>Eight</ListBoxItem>
+            <ListBoxItem>Nine</ListBoxItem>
+            <ListBoxItem>Ten</ListBoxItem>
+            <ListBoxItem>Eleven</ListBoxItem>
+            <ListBoxItem>Twelve</ListBoxItem>
+        </ListBox>
+    </Grid>
+</local:BaseWindow>

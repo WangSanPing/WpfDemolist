@@ -27,6 +27,7 @@ namespace WpfDemolist
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
+
         }
 
         /// <summary>
@@ -53,6 +54,9 @@ namespace WpfDemolist
                     break;
                 case (int)GlobalStaticStr.FunctionList.ControlsOfControlTemplate:
                     page = new ControlsOfControlTemplate();
+                    break;
+                case (int)GlobalStaticStr.FunctionList.CustomListBox:
+                    page = new CustomListBox();
                     break;
             }
 

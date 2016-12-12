@@ -15,7 +15,8 @@ namespace WpfDemolist.Common
         {
             DemoControlTemplate = 0,
             VisualTreeDisplay = 1,
-            ControlsOfControlTemplate = 2
+            ControlsOfControlTemplate = 2,
+            CustomListBox = 3
         }
     }
 }

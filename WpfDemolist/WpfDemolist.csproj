@@ -65,6 +65,9 @@
     <Compile Include="ControlTemplateList\ControlsOfControlTemplate.xaml.cs">
       <DependentUpon>ControlsOfControlTemplate.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ControlTemplateList\CustomListBox.xaml.cs">
+      <DependentUpon>CustomListBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ControlTemplateList\DemoControlTemplate.xaml.cs">
       <DependentUpon>DemoControlTemplate.xaml</DependentUpon>
     </Compile>
@@ -78,6 +81,10 @@
     <Page Include="ControlTemplateList\ControlsOfControlTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ControlTemplateList\CustomListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ControlTemplateList\DemoControlTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -100,6 +107,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ResourceDictionary\ButtonControlTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionary\CustomListBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
