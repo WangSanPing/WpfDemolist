@@ -56,29 +56,36 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BaseWindow.cs" />
-    <Compile Include="ControlsOfControlTemplate.xaml.cs">
-      <DependentUpon>ControlsOfControlTemplate.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Common\GlobalStaticStr.cs" />
     <Compile Include="Controls\DataGridExtensions.cs" />
     <Compile Include="Controls\DataGridSelectColumn.xaml.cs">
       <DependentUpon>DataGridSelectColumn.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\MarkObject.cs" />
-    <Compile Include="GlobalStaticStr.cs" />
-    <Compile Include="VisualTreeDisplay.xaml.cs">
+    <Compile Include="ControlTemplateList\ControlsOfControlTemplate.xaml.cs">
+      <DependentUpon>ControlsOfControlTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ControlTemplateList\DemoControlTemplate.xaml.cs">
+      <DependentUpon>DemoControlTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ControlTemplateList\VisualTreeDisplay.xaml.cs">
       <DependentUpon>VisualTreeDisplay.xaml</DependentUpon>
     </Compile>
-    <Page Include="ControlsOfControlTemplate.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Controls\DataGridSelectColumn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DemoControlTemplate.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="ControlTemplateList\ControlsOfControlTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ControlTemplateList\DemoControlTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ControlTemplateList\VisualTreeDisplay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -88,18 +95,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DemoControlTemplate.xaml.cs">
-      <DependentUpon>DemoControlTemplate.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ResourceDictionary\ButtonControlTemplate.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="VisualTreeDisplay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

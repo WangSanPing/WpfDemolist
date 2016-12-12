@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Xml;
 
-namespace WpfDemolist
+namespace WpfDemolist.ControlTemplateList
 {
     /// <summary>
     /// ControlsOfControlTemplate.xaml 的交互逻辑
