@@ -37,6 +37,5 @@
                 <SolidColorBrush Color="{Binding ElementName=colorPicker,Path=Color}"></SolidColorBrush>
             </Rectangle.Fill>
         </Rectangle>
-
     </Grid>
 </UserControl>

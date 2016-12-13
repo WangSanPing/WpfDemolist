@@ -9,7 +9,8 @@
         Title="ColorPickerDemo" Height="300" Width="300">
     <StackPanel>
         <lib:ColorPicker 
-            Name="colorPicker" Margin="2" Padding="3" ColorChanged="colorPicker_ColorChanged" Color="Yellow"></lib:ColorPicker>
-        <TextBlock Name="lblColor" Margin="10"></TextBlock>
+            Name="colorPicker" Margin="2" Padding="3"  ColorChanged="colorPicker_ColorChanged" Color="Yellow"></lib:ColorPicker>
+        <TextBlock Name="lblColor" Margin="10" Height="20"></TextBlock>
+        <Button Command="Undo" CommandTarget="{Binding ElementName=colorPicker}" Height="30">撤销</Button>
     </StackPanel>
 </Window>

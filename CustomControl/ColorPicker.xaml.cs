@@ -20,27 +20,17 @@ namespace CustomControl
     /// </summary>
     public partial class ColorPicker : UserControl
     {
+        #region Field
+
         public static DependencyProperty ColorProperty;
         public static DependencyProperty RedProperty;
         public static DependencyProperty GreenProperty;
         public static DependencyProperty BlueProperty;
+        private Color? previousColor;
 
-        public static readonly RoutedEvent ColorChangedEvent =
-         EventManager.RegisterRoutedEvent("ColorChanged", RoutingStrategy.Bubble,
-             typeof(RoutedPropertyChangedEventHandler<Color>), typeof(ColorPicker));
+        #endregion Field
 
-        public event RoutedPropertyChangedEventHandler<Color> ColorChanged
-        {
-            add { AddHandler(ColorChangedEvent, value); }
-            remove { RemoveHandler(ColorChangedEvent, value); }
-        }
-
-        private void OnColorChanged(Color oldValue, Color newValue)
-        {
-            RoutedPropertyChangedEventArgs<Color> args = new RoutedPropertyChangedEventArgs<Color>(oldValue, newValue);
-            args.RoutedEvent = ColorPicker.ColorChangedEvent;
-            RaiseEvent(args);
-        }
+        #region 属性
 
         public Color Color
         {
@@ -65,6 +55,10 @@ namespace CustomControl
             get { return (byte)GetValue(BlueProperty); }
             set { SetValue(BlueProperty, value); }
         }
+
+        #endregion
+
+        #region 构造函数
 
         static ColorPicker()
         {
@@ -91,12 +85,41 @@ namespace CustomControl
                 typeof(byte),
                 typeof(ColorPicker),
                 new FrameworkPropertyMetadata(new PropertyChangedCallback(OnColorRGBChanged)));
+
+            CommandManager.RegisterClassCommandBinding(typeof(ColorPicker), new CommandBinding(ApplicationCommands.Undo,
+                UndoCommand_Executed, UndoCommand_CanExecute));
         }
 
         public ColorPicker()
         {
             InitializeComponent();
+            // SetUpCommands();
         }
+
+        #endregion
+
+        #region 注册在XAML中可用的事件
+
+        public static readonly RoutedEvent ColorChangedEvent =
+                 EventManager.RegisterRoutedEvent("ColorChanged", RoutingStrategy.Bubble,
+                 typeof(RoutedPropertyChangedEventHandler<Color>), typeof(ColorPicker));
+
+        public event RoutedPropertyChangedEventHandler<Color> ColorChanged
+        {
+            add { AddHandler(ColorChangedEvent, value); }
+            remove { RemoveHandler(ColorChangedEvent, value); }
+        }
+
+        private void OnColorChanged(Color oldValue, Color newValue)
+        {
+            RoutedPropertyChangedEventArgs<Color> args = new RoutedPropertyChangedEventArgs<Color>(oldValue, newValue);
+            args.RoutedEvent = ColorPicker.ColorChangedEvent;
+            RaiseEvent(args);
+        }
+
+        #endregion
+
+        #region 依赖属性的回调事件
 
         private static void OnColorChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
@@ -107,6 +130,9 @@ namespace CustomControl
             colorPicker.Red = newColor.R;
             colorPicker.Green = newColor.G;
             colorPicker.Blue = newColor.B;
+
+            colorPicker.previousColor = (Color)e.OldValue;
+            colorPicker.OnColorChanged(oldColor, newColor);
         }
 
         private static void OnColorRGBChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
@@ -129,5 +155,34 @@ namespace CustomControl
 
             colorPicker.Color = color;
         }
+
+        #endregion
+
+        #region Command
+
+        /// <summary>
+        /// 公共commandBingdings绑定
+        /// </summary>
+        private void SetUpCommands()
+        {
+            CommandBinding binding = new CommandBinding(ApplicationCommands.Undo, UndoCommand_Executed, UndoCommand_CanExecute);
+
+            this.CommandBindings.Add(binding);
+        }
+
+        private static void UndoCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            ColorPicker colorpicker = (ColorPicker)sender;
+            e.CanExecute = colorpicker.previousColor.HasValue;
+        }
+
+        private static void UndoCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            ColorPicker colorpicker = (ColorPicker)sender;
+            Color currentColor = colorpicker.Color;
+            colorpicker.Color = (Color)colorpicker.previousColor;
+        }
+
+        #endregion
     }
 }
