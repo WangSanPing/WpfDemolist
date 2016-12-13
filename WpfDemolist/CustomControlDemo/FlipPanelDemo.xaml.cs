@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace WpfDemolist.CustomControlDemo
 {
     /// <summary>
-    /// ColorPickerDemo.xaml 的交互逻辑
+    /// FlipPanelDemo.xaml 的交互逻辑
     /// </summary>
-    public partial class ColorPickerDemo : BaseWindow
+    public partial class FlipPanelDemo : BaseWindow
     {
-        public ColorPickerDemo()
+        public FlipPanelDemo()
         {
             InitializeComponent();
-        }
-
-        private void colorPicker_ColorChanged(object sender, RoutedPropertyChangedEventArgs<Color> e)
-        {
-            if (lblColor != null) lblColor.Text = "The new color is " + e.NewValue.ToString();
         }
     }
 }

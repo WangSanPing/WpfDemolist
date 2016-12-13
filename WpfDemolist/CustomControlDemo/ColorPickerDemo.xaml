@@ -1,16 +1,16 @@
-﻿<Window x:Class="WpfDemolist.CustomControlDemo.ColorPickerDemo"
+﻿<local:BaseWindow x:Class="WpfDemolist.CustomControlDemo.ColorPickerDemo"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfDemolist.CustomControlDemo"
+        xmlns:local="clr-namespace:WpfDemolist"
         xmlns:lib="clr-namespace:CustomControl;assembly=CustomControl"
         mc:Ignorable="d"
-        Title="ColorPickerDemo" Height="300" Width="300">
+        Title="ColorPickerDemo" Height="400" Width="400">
     <StackPanel>
         <lib:ColorPicker 
             Name="colorPicker" Margin="2" Padding="3"  ColorChanged="colorPicker_ColorChanged" Color="Yellow"></lib:ColorPicker>
         <TextBlock Name="lblColor" Margin="10" Height="20"></TextBlock>
         <Button Command="Undo" CommandTarget="{Binding ElementName=colorPicker}" Height="30">撤销</Button>
     </StackPanel>
-</Window>
+</local:BaseWindow>
