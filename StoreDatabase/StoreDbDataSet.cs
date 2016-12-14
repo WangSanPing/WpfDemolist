@@ -20,11 +20,18 @@ namespace StoreDatabase
         }
 
         internal static DataSet ReadDataSet()
-        {            
-            DataSet ds = new DataSet();
-            ds.ReadXmlSchema("store.xsd");
-            ds.ReadXml("store.xml");
-            return ds;
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                ds.ReadXmlSchema("store.xsd");
+                ds.ReadXml("store.xml");
+                return ds;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
         }
 
     }

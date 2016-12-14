@@ -18,7 +18,8 @@ namespace WpfDemolist.Common
             ControlsOfControlTemplate,
             CustomListBox,
             ColorPickerDemo,
-            FlipPanelDemo 
+            FlipPanelDemo,
+            ProductDetails
         }
     }
 }

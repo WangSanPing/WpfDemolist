@@ -41,6 +41,13 @@
                 翻转问答
             </Button>
         </StackPanel>
-
+        <StackPanel Margin="10" Grid.Column="0" Grid.Row="1">
+            <TextBlock Height="30" VerticalAlignment="Bottom" TextBlock.FontSize="15"  HorizontalAlignment="Left"
+                       Text="数据绑定"></TextBlock>
+            <Button Height="40" Click="Button_Click"  Tag="6" >
+                ProductDetails
+            </Button>
+        </StackPanel>
+        
     </Grid>
 </Window>

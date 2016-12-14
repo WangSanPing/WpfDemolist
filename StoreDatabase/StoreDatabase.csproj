@@ -41,6 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs" />
+    <Compile Include="File\store.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>store.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="store.Designer.cs">
@@ -53,6 +58,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="File\store.xsc">
+      <DependentUpon>store.xsd</DependentUpon>
+    </None>
+    <None Include="File\store.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>store.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="File\store.xss">
+      <DependentUpon>store.xsd</DependentUpon>
+    </None>
     <None Include="store.xsc">
       <DependentUpon>store.xsd</DependentUpon>
     </None>
@@ -66,8 +82,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="File\store.xml" />
     <Content Include="store.xml" />
-    <Content Include="UpgradeLog.htm" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

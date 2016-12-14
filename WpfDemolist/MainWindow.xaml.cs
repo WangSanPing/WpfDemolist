@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using WpfDemolist.Common;
 using WpfDemolist.ControlTemplateList;
 using WpfDemolist.CustomControlDemo;
+using WpfDemolist.DataBinding;
 
 namespace WpfDemolist
 {
@@ -62,6 +63,9 @@ namespace WpfDemolist
                     break;
                 case (int)GlobalStaticStr.WpfDemoList.FlipPanelDemo:
                     page = new FlipPanelDemo();
+                    break;
+                case (int)GlobalStaticStr.WpfDemoList.ProductDetails:
+                    page = new ProductDetails();
                     break;
             }
 
