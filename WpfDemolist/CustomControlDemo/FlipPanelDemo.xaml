@@ -7,7 +7,32 @@
         xmlns:lib="clr-namespace:CustomControl;assembly=CustomControl"
         mc:Ignorable="d"
         Title="FlipPanelDemo" Height="300" Width="300">
-    <Grid>
-        <lib:FlipPanel></lib:FlipPanel>
+    <Grid x:Name="LayoutRoot" Background="White">
+        <lib:FlipPanel x:Name="panel" BorderBrush="DarkOrange" BorderThickness="3"
+                       CornerRadius="4.0" Margin="10">
+            <lib:FlipPanel.FrontContent>
+                <StackPanel>
+                    <TextBlock TextWrapping="Wrap" Margin="3" FontSize="16"
+                               Foreground="DarkOrange">这是正面</TextBlock>
+                    <Button Margin="3" Padding="3" Content="Button One"></Button>
+                    <Button Margin="3" Padding="3" Content="Button Two"></Button>
+                    <Button Margin="3" Padding="3" Content="Button Three"></Button>
+                    <Button Margin="3" Padding="3" Content="Button Four"></Button>
+                </StackPanel>
+            </lib:FlipPanel.FrontContent>
+            <lib:FlipPanel.BackContent>
+                <Grid Margin="6">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock TextWrapping="Wrap" Margin="3" FontSize="16"
+                               Foreground="DarkMagenta">这是背面</TextBlock>
+                    <Button Grid.Row="2" Margin="3" Padding="10" Content="翻转"
+                            HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Click="Button_Click"></Button>
+                </Grid>
+            </lib:FlipPanel.BackContent>
+        </lib:FlipPanel>
     </Grid>
 </local:BaseWindow>

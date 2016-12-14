@@ -34,8 +34,11 @@
         <StackPanel Margin="10" Grid.Column="1" Grid.Row="0">
             <TextBlock Height="30" VerticalAlignment="Bottom" TextBlock.FontSize="15"  HorizontalAlignment="Left"
                        Text="自定义控件"></TextBlock>
-            <Button Height="40" x:Name="CustomControl" Click="CustomControl_Click"  Tag="0" >
-                自定义控件
+            <Button Height="40" Click="Button_Click"  Tag="4" >
+                颜色拾取器
+            </Button>
+            <Button Height="40" Click="Button_Click"  Tag="5" >
+                翻转问答
             </Button>
         </StackPanel>
 

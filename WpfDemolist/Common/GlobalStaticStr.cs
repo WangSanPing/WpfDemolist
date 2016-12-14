@@ -11,12 +11,14 @@ namespace WpfDemolist.Common
         /// <summary>
         /// 控件模板用
         /// </summary>
-        public enum ControlTemplateList
+        public enum WpfDemoList
         {
-            DemoControlTemplate = 0,
-            VisualTreeDisplay = 1,
-            ControlsOfControlTemplate = 2,
-            CustomListBox = 3
+            DemoControlTemplate,
+            VisualTreeDisplay,
+            ControlsOfControlTemplate,
+            CustomListBox,
+            ColorPickerDemo,
+            FlipPanelDemo 
         }
     }
 }

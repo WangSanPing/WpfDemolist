@@ -23,5 +23,10 @@ namespace WpfDemolist.CustomControlDemo
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            panel.IsFlipped = !panel.IsFlipped;
+        }
     }
 }

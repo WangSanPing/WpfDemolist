@@ -44,27 +44,27 @@ namespace WpfDemolist
             // 简单工厂
             switch (tag)
             {
-                case (int)GlobalStaticStr.ControlTemplateList.DemoControlTemplate:
+                case (int)GlobalStaticStr.WpfDemoList.DemoControlTemplate:
                     page = new DemoControlTemplate();
                     break;
-                case (int)GlobalStaticStr.ControlTemplateList.VisualTreeDisplay:
+                case (int)GlobalStaticStr.WpfDemoList.VisualTreeDisplay:
                     page = new VisualTreeDisplay();
                     page.showVisualTree(this);
                     break;
-                case (int)GlobalStaticStr.ControlTemplateList.ControlsOfControlTemplate:
+                case (int)GlobalStaticStr.WpfDemoList.ControlsOfControlTemplate:
                     page = new ControlsOfControlTemplate();
                     break;
-                case (int)GlobalStaticStr.ControlTemplateList.CustomListBox:
+                case (int)GlobalStaticStr.WpfDemoList.CustomListBox:
                     page = new CustomListBox();
+                    break;
+                case (int)GlobalStaticStr.WpfDemoList.ColorPickerDemo:
+                    page = new ColorPickerDemo();
+                    break;
+                case (int)GlobalStaticStr.WpfDemoList.FlipPanelDemo:
+                    page = new FlipPanelDemo();
                     break;
             }
 
-            page.Show();
-        }
-
-        private void CustomControl_Click(object sender, RoutedEventArgs e)
-        {
-            ColorPickerDemo page = new ColorPickerDemo();
             page.Show();
         }
     }

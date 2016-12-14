@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls.Primitives;
 
 namespace CustomControl
 {
@@ -21,7 +22,7 @@ namespace CustomControl
                 , null);
 
         public static DependencyProperty IsFlippedProperty =
-            DependencyProperty.Register("IsFlipped", typeof(object), typeof(FlipPanel)
+            DependencyProperty.Register("IsFlipped", typeof(bool), typeof(FlipPanel)
                 , null);
 
         public static DependencyProperty CornerRadiusProperty =
@@ -35,11 +36,11 @@ namespace CustomControl
         {
             get
             {
-                return base.GetValue(FrontContentProperty);
+                return GetValue(FrontContentProperty);
             }
             set
             {
-                base.SetValue(FrontContentProperty, value);
+                SetValue(FrontContentProperty, value);
             }
         }
 
@@ -47,11 +48,11 @@ namespace CustomControl
         {
             get
             {
-                return base.GetValue(BackContentProperty);
+                return GetValue(BackContentProperty);
             }
             set
             {
-                base.SetValue(BackContentProperty, value);
+                SetValue(BackContentProperty, value);
             }
         }
 
@@ -68,7 +69,7 @@ namespace CustomControl
             }
         }
 
-        public object CornerRadius
+        public CornerRadius CornerRadius
         {
             get
             {
@@ -90,12 +91,38 @@ namespace CustomControl
 
         private void ChangeVisualState(bool state)
         {
-
+            if (!IsFlipped)
+            {
+                VisualStateManager.GoToState(this, "Normal", state);
+            }
+            else
+            {
+                VisualStateManager.GoToState(this, "Flipped", state);
+            }
         }
 
         private static void FrontContentCallBack(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
 
+        }
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+
+            ToggleButton flipButton = base.GetTemplateChild("FlipButton") as ToggleButton;
+            if (flipButton != null) flipButton.Click += FlipButton_Click;
+
+            ToggleButton flipButtonAlternate = base.GetTemplateChild("FlipButtonAlternate") as ToggleButton;
+            if (flipButtonAlternate != null) flipButtonAlternate.Click += FlipButton_Click;
+
+            this.ChangeVisualState(false);
+        }
+
+        private void FlipButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.IsFlipped = !this.IsFlipped;
+            this.ChangeVisualState(true);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:CustomControl.Themes">
+                    xmlns:local="clr-namespace:CustomControl.themes">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/CustomControl;component/Themes/FlipPanel.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="/CustomControl;component/themes/FlipPanel.xaml"></ResourceDictionary>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
