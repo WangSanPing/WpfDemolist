@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDemolist", "WpfDemolist\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControl", "CustomControl\CustomControl.csproj", "{0A43E362-1F18-45AF-B454-463846FD6E33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreDatabase", "StoreDatabase\StoreDatabase.csproj", "{F9914A4C-4CE5-42A8-930A-C8A1FAA133D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0A43E362-1F18-45AF-B454-463846FD6E33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A43E362-1F18-45AF-B454-463846FD6E33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A43E362-1F18-45AF-B454-463846FD6E33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9914A4C-4CE5-42A8-930A-C8A1FAA133D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9914A4C-4CE5-42A8-930A-C8A1FAA133D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9914A4C-4CE5-42A8-930A-C8A1FAA133D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9914A4C-4CE5-42A8-930A-C8A1FAA133D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
