@@ -24,8 +24,8 @@ namespace StoreDatabase
             try
             {
                 DataSet ds = new DataSet();
-                ds.ReadXmlSchema("store.xsd");
-                ds.ReadXml("store.xml");
+                ds.ReadXmlSchema("DB/store.xsd");
+                ds.ReadXml("DB/store.xml");
                 return ds;
             }
             catch (Exception e)
