@@ -23,7 +23,6 @@
                      VirtualizingPanel.VirtualizationMode="Recycling"
                      VirtualizingPanel.CacheLength="120"
                      VirtualizingPanel.CacheLengthUnit="Item"
-                     ScrollViewer.IsDeferredScrollingEnabled="True"
                      VirtualizingPanel.ScrollUnit="Pixel"
                 SelectionChanged="lstProducts_SelectionChanged">
             </ListBox>
@@ -39,7 +38,6 @@
         </Grid>
 
         <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" ResizeBehavior="PreviousAndNext"
-                          
               Height="5"
     ></GridSplitter>
         <Border Grid.Row="2" Padding="7" Margin="7" Background="LightSteelBlue">
@@ -57,7 +55,16 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Margin="7" >Model Number:</TextBlock>
-                <TextBox Margin="5" Grid.Column="1" Text="{Binding Path=ModelNumber}" ></TextBox>
+                <!--<TextBox Margin="5" Grid.Column="1" Text="{Binding Path=ModelNumber,ValidatesOnNotifyDataErrors=True,NotifyOnValidationError=True,Mode=TwoWay}" ></TextBox>-->
+                <TextBox Margin="5" Grid.Column="1">
+                    <TextBox.Text>
+                        <Binding Path="ModelNumber" NotifyOnValidationError="true">
+                            <Binding.ValidationRules>
+                                <DataErrorValidationRule></DataErrorValidationRule>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
                 <TextBlock Margin="7" Grid.Row="1">Model Name:</TextBlock>
                 <TextBox Margin="5" Grid.Row="1" Grid.Column="1" Text="{Binding Path=ModelName}"></TextBox>
                 <TextBlock Margin="7" Grid.Row="2">Unit Cost:</TextBlock>
