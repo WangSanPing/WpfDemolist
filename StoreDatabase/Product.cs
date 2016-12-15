@@ -86,7 +86,7 @@ namespace StoreDatabase
                 if (!valid)
                 {
                     List<string> errors = new List<string>();
-                    errors.Add("只能输入数字");
+                    errors.Add("只能输入数字和字母");
                     SetErrors("ModelNumber", errors);
                 }
 

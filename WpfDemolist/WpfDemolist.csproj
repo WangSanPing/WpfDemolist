@@ -74,6 +74,8 @@
     <Compile Include="ControlTemplateList\VisualTreeDisplay.xaml.cs">
       <DependentUpon>VisualTreeDisplay.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ValidationClass\NoBlankProductRule.cs" />
+    <Compile Include="ValidationClass\PositivePriceRule.cs" />
     <Page Include="Controls\DataGridSelectColumn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

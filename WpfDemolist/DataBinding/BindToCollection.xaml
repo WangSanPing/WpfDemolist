@@ -4,8 +4,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfDemolist"
+                  xmlns:validation="clr-namespace:WpfDemolist.ValidationClass"
         mc:Ignorable="d"
         Title="BindToCollection" Height="500" Width="300">
+    <Window.Resources>
+        <ControlTemplate x:Key="CT_TextBox_Required">
+            <DockPanel>
+                <TextBlock Foreground="Red" FontSize="20" Text="!" />
+                <AdornedElementPlaceholder />
+            </DockPanel>
+        </ControlTemplate>
+        <Style x:Key="Style_TextBox_Error" TargetType="{x:Type TextBox}">
+            <Setter Property="Margin" Value="10,5,20,5" />
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"  
+                    Value="{Binding RelativeSource={x:Static RelativeSource.Self},Path=(Validation.Errors)[0].ErrorContent}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
@@ -53,22 +71,66 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-
+                <Grid.Resources>
+                    <Style TargetType="{x:Type TextBox}">
+                        <Setter Property="Validation.ErrorTemplate">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <DockPanel LastChildFill="True">
+                                        <TextBlock DockPanel.Dock="Right"
+                                                      Foreground="Red" FontSize="14" FontWeight="Bold"
+                                                        ToolTip="{Binding ElementName=adornerPlaceholder,
+                                                        Path=AdornedElement.(Validation.Errors)[0].ErrorContent}">*</TextBlock>
+                                        <Border BorderBrush="Green" BorderThickness="1">
+                                            <AdornedElementPlaceholder Name="adornerPlaceholder"></AdornedElementPlaceholder>
+                                        </Border>
+                                    </DockPanel>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="Validation.HasError" Value="true">
+                                <Setter Property="ToolTip"
+                  Value="{Binding RelativeSource={RelativeSource Self},
+                        Path=(Validation.Errors)[0].ErrorContent}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Resources>
+                <!--<Grid.BindingGroup>
+                    <BindingGroup x:Name="productBindingGroup">
+                        <BindingGroup.ValidationRules>
+                            <validation:NoBlankProductRule></validation:NoBlankProductRule>
+                        </BindingGroup.ValidationRules>
+                    </BindingGroup>
+                </Grid.BindingGroup>-->
                 <TextBlock Margin="7" >Model Number:</TextBlock>
-                <!--<TextBox Margin="5" Grid.Column="1" Text="{Binding Path=ModelNumber,ValidatesOnNotifyDataErrors=True,NotifyOnValidationError=True,Mode=TwoWay}" ></TextBox>-->
-                <TextBox Margin="5" Grid.Column="1">
+                <TextBox Margin="5" Grid.Column="1" Text="{Binding Path=ModelNumber,
+                    ValidatesOnNotifyDataErrors=True,
+                    NotifyOnValidationError=True,
+                    Mode=TwoWay}" ></TextBox>
+                <!--<TextBox Margin="5" Grid.Column="1">
                     <TextBox.Text>
-                        <Binding Path="ModelNumber" NotifyOnValidationError="true">
+                        <Binding Path="ModelNumber" NotifyOnValidationError="true" >
                             <Binding.ValidationRules>
                                 <DataErrorValidationRule></DataErrorValidationRule>
                             </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
-                </TextBox>
+                </TextBox>-->
                 <TextBlock Margin="7" Grid.Row="1">Model Name:</TextBlock>
                 <TextBox Margin="5" Grid.Row="1" Grid.Column="1" Text="{Binding Path=ModelName}"></TextBox>
                 <TextBlock Margin="7" Grid.Row="2">Unit Cost:</TextBlock>
-                <TextBox Margin="5" Grid.Row="2" Grid.Column="1" Text="{Binding Path=UnitCost}"></TextBox>
+                <TextBox Margin="5" Grid.Row="2" Grid.Column="1">
+                    <TextBox.Text>
+                        <Binding Path="UnitCost" NotifyOnValidationError="true" StringFormat="{}{0:C}">
+                            <Binding.ValidationRules>
+                                <validation:PositivePriceRule Max="999.99"></validation:PositivePriceRule>
+                                <ExceptionValidationRule></ExceptionValidationRule>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
                 <TextBlock Margin="7,7,7,0" Grid.Row="3">Description:</TextBlock>
                 <TextBox Margin="7" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
                  TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Text="{Binding Path=Description}"></TextBox>
