@@ -2,48 +2,130 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
+using System.Collections;
 
 namespace StoreDatabase
 {
-	public class Product : INotifyPropertyChanged
-	{
-		private string modelNumber;
-		public string ModelNumber
-		{
-			get { return modelNumber; }
-			set {
+    public class Product : INotifyPropertyChanged, INotifyDataErrorInfo
+    {
+
+        #region error
+
+        private Dictionary<string, List<string>> errors = new Dictionary<string, List<string>>();
+
+        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
+
+        public IEnumerable GetErrors(string propertyName)
+        {
+            if (string.IsNullOrEmpty(propertyName))
+            {
+                return (errors.Values);
+            }
+            else
+            {
+                if (errors.ContainsKey(propertyName))
+                {
+                    return (errors[propertyName]);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+        public bool HasErrors
+        {
+            get
+            {
+                return errors.Count > 0;
+            }
+        }
+
+        private void SetErrors(string propertyName, List<string> propertyErrors)
+        {
+            errors.Remove(propertyName);
+
+            errors.Add(propertyName, propertyErrors);
+
+            if (ErrorsChanged != null)
+            {
+                ErrorsChanged(this, new DataErrorsChangedEventArgs(propertyName));
+            }
+        }
+
+        private void ClearErrors(string propertyName)
+        {
+            errors.Remove(propertyName);
+
+            if (ErrorsChanged != null)
+            {
+                ErrorsChanged(this, new DataErrorsChangedEventArgs(propertyName));
+            }
+        }
+
+        #endregion error
+
+        private string modelNumber;
+        public string ModelNumber
+        {
+            get { return modelNumber; }
+            set
+            {
                 modelNumber = value;
+
+                bool valid = true;
+                foreach (char c in modelNumber)
+                {
+                    if (!(Char.IsLetterOrDigit(c)))
+                    {
+                        valid = false;
+                        break;
+                    }
+                }
+
+                if (!valid)
+                {
+                    List<string> errors = new List<string>();
+                    errors.Add("只能输入数字");
+                    SetErrors("ModelNumber", errors);
+                }
+
                 OnPropertyChanged(new PropertyChangedEventArgs("ModelNumber"));
             }
-		}              
+        }
 
-		private string modelName;
-		public string ModelName
-		{
-			get { return modelName; }
-			set {
+        private string modelName;
+        public string ModelName
+        {
+            get { return modelName; }
+            set
+            {
                 modelName = value;
                 OnPropertyChanged(new PropertyChangedEventArgs("ModelName"));
             }
-		}
+        }
 
-		private decimal unitCost;
-		public decimal UnitCost
-		{
-			get { return unitCost; }
-			set { unitCost = value;
+        private decimal unitCost;
+        public decimal UnitCost
+        {
+            get { return unitCost; }
+            set
+            {
+                unitCost = value;
                 OnPropertyChanged(new PropertyChangedEventArgs("UnitCost"));
             }
-		}
+        }
 
-		private string description;
-		public string Description
-		{
-			get { return description; }
-			set { description = value;
+        private string description;
+        public string Description
+        {
+            get { return description; }
+            set
+            {
+                description = value;
                 OnPropertyChanged(new PropertyChangedEventArgs("Description"));
             }
-		}
+        }
 
         private string categoryName;
         public string CategoryName
@@ -65,29 +147,29 @@ namespace StoreDatabase
         {
             get { return productImagePath; }
             set { productImagePath = value; }
-        }        
-
-		public Product(string modelNumber, string modelName,
-			decimal unitCost, string description)
-		{
-			ModelNumber = modelNumber;
-			ModelName = modelName;
-			UnitCost = unitCost;
-			Description = description;
-		}
+        }
 
         public Product(string modelNumber, string modelName,
-           decimal unitCost, string description, 
+            decimal unitCost, string description)
+        {
+            ModelNumber = modelNumber;
+            ModelName = modelName;
+            UnitCost = unitCost;
+            Description = description;
+        }
+
+        public Product(string modelNumber, string modelName,
+           decimal unitCost, string description,
            string productImagePath)
             :
            this(modelNumber, modelName, unitCost, description)
-        {            
-            ProductImagePath = productImagePath;            
+        {
+            ProductImagePath = productImagePath;
         }
 
         public Product(string modelNumber, string modelName,
             decimal unitCost, string description, int categoryID,
-            string categoryName, string productImagePath) : 
+            string categoryName, string productImagePath) :
             this(modelNumber, modelName, unitCost, description)
         {
             CategoryName = categoryName;
@@ -95,12 +177,13 @@ namespace StoreDatabase
             CategoryID = categoryID;
         }
 
-		public override string ToString()
-		{
-			return ModelName + " (" + ModelNumber + ")";
-		}
+        public override string ToString()
+        {
+            return ModelName + " (" + ModelNumber + ")";
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         public void OnPropertyChanged(PropertyChangedEventArgs e)
         {
             if (PropertyChanged != null)

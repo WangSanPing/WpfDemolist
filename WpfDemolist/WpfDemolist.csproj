@@ -102,6 +102,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DataBinding\BindToCollection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DataBinding\ProductDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -119,6 +123,9 @@
     </Compile>
     <Compile Include="CustomControlDemo\FlipPanelDemo.xaml.cs">
       <DependentUpon>FlipPanelDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataBinding\BindToCollection.xaml.cs">
+      <DependentUpon>BindToCollection.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataBinding\ProductDetails.xaml.cs">
       <DependentUpon>ProductDetails.xaml</DependentUpon>

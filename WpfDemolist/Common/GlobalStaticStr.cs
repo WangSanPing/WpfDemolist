@@ -19,7 +19,8 @@ namespace WpfDemolist.Common
             CustomListBox,
             ColorPickerDemo,
             FlipPanelDemo,
-            ProductDetails
+            ProductDetails,
+            BindToCollection
         }
     }
 }

@@ -23,8 +23,6 @@ namespace WpfDemolist.DataBinding
         public ProductDetails()
         {
             InitializeComponent();
-
-            
         }
 
         private void cmdGetProduct_Click(object sender, RoutedEventArgs e)
@@ -41,6 +39,8 @@ namespace WpfDemolist.DataBinding
                 try
                 {
                     gridProductDetails.DataContext = App.StoreDB.GetProduct(ID);
+                    // 设置逻辑焦点,第二个参数是要设置焦点的控件
+                    FocusManager.SetFocusedElement(this, txtNumber);
                 }
                 catch 
                 {

@@ -67,6 +67,9 @@ namespace WpfDemolist
                 case (int)GlobalStaticStr.WpfDemoList.ProductDetails:
                     page = new ProductDetails();
                     break;
+                case (int)GlobalStaticStr.WpfDemoList.BindToCollection:
+                    page = new BindToCollection();
+                    break;
             }
 
             page.Show();

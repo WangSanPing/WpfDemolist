@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDemolist", "WpfDemolist\WpfDemolist.csproj", "{166CAABB-4A77-4FA3-9EF5-66315D19B40C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F9914A4C-4CE5-42A8-930A-C8A1FAA133D1} = {F9914A4C-4CE5-42A8-930A-C8A1FAA133D1}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControl", "CustomControl\CustomControl.csproj", "{0A43E362-1F18-45AF-B454-463846FD6E33}"
 EndProject
