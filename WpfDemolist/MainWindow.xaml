@@ -50,6 +50,9 @@
             <Button Height="40" Click="Button_Click"  Tag="7" >
                 绑定到集合
             </Button>
+            <Button Height="40" Click="Button_Click"  Tag="8" >
+                数据格式化DEMO
+            </Button>
         </StackPanel>
         
     </Grid>

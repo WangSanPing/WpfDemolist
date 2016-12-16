@@ -70,6 +70,10 @@ namespace WpfDemolist
                 case (int)GlobalStaticStr.WpfDemoList.BindToCollection:
                     page = new BindToCollection();
                     break;
+                case (int)GlobalStaticStr.WpfDemoList.DataFormatDemo:
+                    page = new DataFormatDemo();
+                    break;
+                    
             }
 
             page.Show();

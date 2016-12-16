@@ -20,7 +20,8 @@ namespace WpfDemolist.Common
             ColorPickerDemo,
             FlipPanelDemo,
             ProductDetails,
-            BindToCollection
+            BindToCollection,
+            DataFormatDemo
         }
     }
 }
