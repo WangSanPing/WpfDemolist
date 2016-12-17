@@ -54,6 +54,13 @@
                 数据格式化DEMO
             </Button>
         </StackPanel>
-        
+        <StackPanel Margin="10" Grid.Column="1" Grid.Row="1">
+            <TextBlock Height="30" VerticalAlignment="Bottom" TextBlock.FontSize="15"  HorizontalAlignment="Left"
+                       Text="样式"></TextBlock>
+            <Button Height="40" Click="Button_Click"  Tag="9" >
+                样式选择器
+            </Button>
+        </StackPanel>
+
     </Grid>
 </Window>

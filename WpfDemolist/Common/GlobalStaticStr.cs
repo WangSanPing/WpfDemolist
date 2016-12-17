@@ -21,7 +21,8 @@ namespace WpfDemolist.Common
             FlipPanelDemo,
             ProductDetails,
             BindToCollection,
-            DataFormatDemo
+            DataFormatDemo,
+            StyleSelectorDemo
         }
     }
 }

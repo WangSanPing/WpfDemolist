@@ -44,4 +44,14 @@
         </Setter>
     </Style>
 
+    <Style x:Key="DefaultStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Background" Value="LightYellow"></Setter>
+        <Setter Property="Padding" Value="2"></Setter>
+    </Style>
+
+    <Style x:Key="HighlightStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Background" Value="LightSteelBlue"></Setter>
+        <Setter Property="Padding" Value="2"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+    </Style>
 </ResourceDictionary>
