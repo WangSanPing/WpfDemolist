@@ -42,8 +42,9 @@
                      VirtualizingPanel.CacheLength="120"
                      VirtualizingPanel.CacheLengthUnit="Item"
                      VirtualizingPanel.ScrollUnit="Pixel"
-                SelectionChanged="lstProducts_SelectionChanged">
+                SelectionChanged="lstProducts_SelectionChanged" Style="{StaticResource ListBoxItemWithCheckBox}">
             </ListBox>
+
 
             <StackPanel Grid.Row="1" HorizontalAlignment="Right" Orientation="Horizontal" Margin="5,2,5,10">
                 <Button Margin="2,0,0,0"  Padding="2"

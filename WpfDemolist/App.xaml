@@ -9,6 +9,7 @@
                 <ResourceDictionary Source="ResourceDictionary/ButtonControlTemplate.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="ResourceDictionary/GradientBrushButton.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="ResourceDictionary/CustomListBox.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="ResourceDictionary/ListBoxStyle.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
