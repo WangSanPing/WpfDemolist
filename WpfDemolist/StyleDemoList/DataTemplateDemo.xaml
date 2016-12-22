@@ -32,6 +32,11 @@
             </Setter>
         </Style>
         <DataTemplate x:Key="ProductTemplateWithImage">
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Path=CategoryName}" Value="Tools">
+                    <Setter Property="ListBoxItem.Foreground" Value="Red"></Setter>
+                </DataTrigger>
+            </DataTemplate.Triggers>
             <Grid Margin="0" Background="White">
                 <Border BorderThickness="1" BorderBrush="SteelBlue" CornerRadius="4">
                     <Grid Margin="3">
