@@ -23,6 +23,26 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <Style x:Key="lstProductDisplay" TargetType="{x:Type ListBox}">
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Border Margin="5" BorderThickness="1" BorderBrush="SteelBlue" CornerRadius="4">
+                            <Grid Margin="3">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock FontWeight="Bold"
+                                       Text="{Binding Path=ModelNumber}"></TextBlock>
+                                <TextBlock Grid.Row="1"
+                                       Text="{Binding Path=ModelName}"></TextBlock>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>

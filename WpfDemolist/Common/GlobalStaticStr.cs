@@ -22,7 +22,8 @@ namespace WpfDemolist.Common
             ProductDetails,
             BindToCollection,
             DataFormatDemo,
-            StyleSelectorDemo
+            StyleSelectorDemo,
+            DataTemplateDemo
         }
     }
 }

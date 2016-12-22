@@ -58,6 +58,7 @@
     <Compile Include="BaseWindow.cs" />
     <Compile Include="Common\decimalConvert.cs" />
     <Compile Include="Common\GlobalStaticStr.cs" />
+    <Compile Include="Common\ImagePathConvert.cs" />
     <Compile Include="Common\PriceToBackgroundConvert.cs" />
     <Compile Include="Controls\DataGridExtensions.cs" />
     <Compile Include="Controls\DataGridSelectColumn.xaml.cs">
@@ -78,6 +79,9 @@
     </Compile>
     <Compile Include="DataBinding\DataFormatDemo.xaml.cs">
       <DependentUpon>DataFormatDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StyleDemoList\DataTemplateDemo.xaml.cs">
+      <DependentUpon>DataTemplateDemo.xaml</DependentUpon>
     </Compile>
     <Compile Include="StyleDemoList\StyleSelectorDemo.xaml.cs">
       <DependentUpon>StyleSelectorDemo.xaml</DependentUpon>
@@ -172,6 +176,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="StyleDemoList\DataTemplateDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StyleDemoList\StyleSelectorDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -233,7 +241,26 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Images\360.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\362.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\397.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\401.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\404.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\image.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

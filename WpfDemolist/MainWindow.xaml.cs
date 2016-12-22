@@ -67,6 +67,9 @@ namespace WpfDemolist
                 case (int)GlobalStaticStr.WpfDemoList.StyleSelectorDemo:
                     page = new StyleSelectorDemo();
                     break;
+                case (int)GlobalStaticStr.WpfDemoList.DataTemplateDemo:
+                    page = new DataTemplateDemo();
+                    break;
             }
 
             page.Show();

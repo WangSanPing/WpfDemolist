@@ -1,0 +1,79 @@
+﻿<local:BaseWindow x:Class="WpfDemolist.StyleDemoList.DataTemplateDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDemolist"
+                  xmlns:common="clr-namespace:WpfDemolist.Common"
+        mc:Ignorable="d"
+        Title="DataTemplateDemo" Height="630" Width="630">
+    <Window.Resources>
+        <common:ImagePathConvert x:Key="ImagePathConvert"></common:ImagePathConvert>
+        <common:PriceToBackgroundConvert x:Key="PriceToBackgroundConvert" HighlightBrush="Orange" DefaultBrush="{x:Null}"
+                                         MinimumPriceToHighlight="50"></common:PriceToBackgroundConvert>
+        <Style x:Key="lstProductDisplay" TargetType="{x:Type ListBox}">
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Border Margin="5" BorderThickness="1" BorderBrush="SteelBlue" CornerRadius="4" >
+                            <Grid Margin="3">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock FontWeight="Bold" Background="{Binding Path=UnitCost,Converter={StaticResource PriceToBackgroundConvert}}"
+                                       Text="{Binding Path=ModelNumber}"></TextBlock>
+                                <TextBlock Grid.Row="1"
+                                       Text="{Binding Path=ModelName}"></TextBlock>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <DataTemplate x:Key="ProductTemplateWithImage">
+            <Grid Margin="0" Background="White">
+                <Border BorderThickness="1" BorderBrush="SteelBlue" CornerRadius="4">
+                    <Grid Margin="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock FontWeight="Bold" Text="{Binding Path=ModelNumber}"></TextBlock>
+                        <TextBlock Grid.Row="1"  Text="{Binding Path=ModelName}"></TextBlock>
+                        <Image Grid.Row="2" Grid.RowSpan="2" Source="{Binding Path=ProductImagePath,Converter={StaticResource ImagePathConvert}}"></Image>
+                    </Grid>
+                </Border>
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="lstProduct1"  Margin="5" HorizontalContentAlignment="Stretch" Style="{StaticResource lstProductDisplay}">
+            <!--<ListBox.ItemContainerStyle>
+                <Style>
+                    <Setter Property="Control.Padding" Value="0"></Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>-->
+        </ListBox>
+        <ListBox x:Name="lstProduct2" HorizontalContentAlignment="Stretch" ItemTemplate="{StaticResource ProductTemplateWithImage}" Grid.Column="1"  Margin="5" ItemsSource="{Binding ElementName=lstProduct1,Path=ItemsSource}">
+            <!--<ListBox.ItemContainerStyle>
+                <Style>
+                    <Setter Property="Control.Padding" Value="0"></Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>-->
+        </ListBox>
+        <ListBox x:Name="lstProduct3" HorizontalContentAlignment="Stretch" Grid.Row="1" DisplayMemberPath="ModelName" Margin="5" ItemsSource="{Binding ElementName=lstProduct1,Path=ItemsSource}"></ListBox>
+        <ListBox x:Name="lstProduct4" HorizontalContentAlignment="Stretch" Grid.Column="1" Grid.Row="1" DisplayMemberPath="ModelName" Margin="5" ItemsSource="{Binding ElementName=lstProduct1,Path=ItemsSource}"></ListBox>
+
+    </Grid>
+
+</local:BaseWindow>

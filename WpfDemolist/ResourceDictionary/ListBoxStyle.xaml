@@ -54,4 +54,5 @@
         <Setter Property="Padding" Value="2"></Setter>
         <Setter Property="FontWeight" Value="Bold"></Setter>
     </Style>
+
 </ResourceDictionary>
