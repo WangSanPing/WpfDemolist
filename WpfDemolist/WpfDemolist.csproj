@@ -56,7 +56,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BaseWindow.cs" />
+    <Compile Include="Common\decimalConvert.cs" />
     <Compile Include="Common\GlobalStaticStr.cs" />
+    <Compile Include="Common\PriceToBackgroundConvert.cs" />
     <Compile Include="Controls\DataGridExtensions.cs" />
     <Compile Include="Controls\DataGridSelectColumn.xaml.cs">
       <DependentUpon>DataGridSelectColumn.xaml</DependentUpon>

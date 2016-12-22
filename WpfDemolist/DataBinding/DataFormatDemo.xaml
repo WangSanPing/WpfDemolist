@@ -4,8 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfDemolist"
+        xmlns:common="clr-namespace:WpfDemolist.Common"
         mc:Ignorable="d"
         Title="DataFormatDemo" Height="400" Width="540">
+    <Window.Resources>
+        <common:decimalConvert x:Key="decimalConvert"></common:decimalConvert>
+        <common:PriceToBackgroundConvert x:Key="PriceToBackgroundConvert" HighlightBrush="Orange" DefaultBrush="{x:Null}"
+                                         MinimumPriceToHighlight="50"></common:PriceToBackgroundConvert>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="230"></ColumnDefinition>
@@ -27,11 +33,11 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Margin="7">Model Number:</TextBlock>
-                <TextBox Name="txtNumber" Margin="5" Grid.Column="1" Text="{Binding Path=ModelNumber,TargetNullValue=[没有值],Mode=TwoWay,ValidatesOnNotifyDataErrors=True,NotifyOnValidationError=True}"></TextBox>
+                <TextBox Name="txtNumber" Margin="5" Grid.Column="1" Text="{Binding Path=ModelNumber, TargetNullValue=[没有值],Mode=TwoWay,ValidatesOnNotifyDataErrors=True,NotifyOnValidationError=True}"></TextBox>
                 <TextBlock Margin="7" Grid.Row="1">Model Name:</TextBlock>
                 <TextBox  Margin="5" Grid.Row="1" Grid.Column="1" Text="{Binding Path=ModelName}"></TextBox>
                 <TextBlock Margin="7" Grid.Row="2">Unit Cost:</TextBlock>
-                <TextBox Margin="5" Grid.Row="2" Grid.Column="1" Text="{Binding Path=UnitCost}"></TextBox>
+                <TextBox Margin="5" Grid.Row="2" Grid.Column="1" Background="{Binding Path=UnitCost,Converter={StaticResource PriceToBackgroundConvert}}" Text="{Binding Path=UnitCost,Converter={StaticResource decimalConvert}}"></TextBox>
                 <TextBlock Margin="7,7,7,0" Grid.Row="3">Description:</TextBlock>
                 <TextBox Margin="7" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
                  VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" Text="{Binding Path=Description}"></TextBox>

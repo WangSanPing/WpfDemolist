@@ -2,9 +2,10 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:WpfDemolist"
+             xmlns:Common="clr-namespace:WpfDemolist.Common"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary>
+        <ResourceDictionary >
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="ResourceDictionary/ButtonControlTemplate.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="ResourceDictionary/GradientBrushButton.xaml"></ResourceDictionary>
