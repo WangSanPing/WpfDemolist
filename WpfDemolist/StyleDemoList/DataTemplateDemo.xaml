@@ -7,16 +7,19 @@
         xmlns:common="clr-namespace:WpfDemolist.Common"
         xmlns:selector="clr-namespace:WpfDemolist.Selector"
         mc:Ignorable="d"
-        Title="DataTemplateDemo" Height="630" Width="630">
+        Title="DataTemplateDemo" Height="830" Width="830">
     <Window.Resources>
         <common:ImagePathConvert x:Key="ImagePathConvert"></common:ImagePathConvert>
+        
         <common:PriceToBackgroundConvert x:Key="PriceToBackgroundConvert" HighlightBrush="Orange" DefaultBrush="{x:Null}"
                                          MinimumPriceToHighlight="50"></common:PriceToBackgroundConvert>
+        
         <Style x:Key="lstProductDisplay" TargetType="{x:Type ListBox}">
             <Setter Property="ItemTemplate">
                 <Setter.Value>
                     <DataTemplate>
-                        <Border Margin="5" BorderThickness="1" BorderBrush="SteelBlue" CornerRadius="4" >
+                        <Border Margin="5" BorderThickness="1" BorderBrush="SteelBlue" CornerRadius="4" 
+                                Background="{Binding Path=Background,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBoxItem}}}">
                             <Grid Margin="3">
                                 <Grid.RowDefinitions>
                                     <RowDefinition></RowDefinition>
@@ -32,6 +35,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
         <DataTemplate x:Key="ProductTemplateWithImage">
             <DataTemplate.Triggers>
                 <DataTrigger Binding="{Binding Path=CategoryName}" Value="Tools">
@@ -53,6 +57,7 @@
                 </Border>
             </Grid>
         </DataTemplate>
+        
         <DataTemplate x:Key="DefaultTemplate">
             <Border Margin="5" BorderThickness="1" BorderBrush="SteelBlue" CornerRadius="4">
                 <Grid Margin="3">
@@ -80,17 +85,58 @@
                 </Grid>
             </Border>
         </DataTemplate>
+
+        <DataTemplate x:Key="TemplateExpand">
+            <Border Margin="5" BorderThickness="1" BorderBrush="SteelBlue"
+                    CornerRadius="4">
+                <StackPanel Margin="3">
+                    <TextBlock Text="{Binding Path=ModelName}"></TextBlock>
+                    <StackPanel>
+                        <StackPanel.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=IsSelected,RelativeSource={
+                                    RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBoxItem}}}" Value="False">
+                                        <Setter Property="StackPanel.Visibility" Value="Collapsed"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Style>
+                        <TextBlock Margin="3" Text="{Binding Path=Description}"
+                                   TextWrapping="Wrap" MaxWidth="250" HorizontalAlignment="Left"></TextBlock>
+                        <Image Source="{Binding Path=ProductImagePath,Converter={StaticResource ImagePathConvert}}"></Image>
+                        <Button FontWeight="Regular" HorizontalAlignment="Right" Padding="1"
+                                Tag="{Binding }">详细</Button>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+        </DataTemplate>
+
     </Window.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition ></ColumnDefinition>
             <ColumnDefinition ></ColumnDefinition>
             <ColumnDefinition ></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <ListBox x:Name="lstProduct1"  Margin="5" HorizontalContentAlignment="Stretch" Style="{StaticResource lstProductDisplay}">
+        <ListBox x:Name="lstProduct1" SnapsToDevicePixels="True"  Margin="5" HorizontalContentAlignment="Stretch" Style="{StaticResource lstProductDisplay}">
+            <ListBox.ItemContainerStyle>
+                <Style>
+                    <Setter Property="Control.Padding" Value="0"></Setter>
+                    <Style.Triggers>
+                        <Trigger Property="ListBoxItem.IsSelected" Value="True">
+                            <Setter Property="ListBoxItem.Background" Value="DarkRed"></Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.ItemContainerStyle>
         </ListBox>
         <ListBox x:Name="lstProduct2" HorizontalContentAlignment="Stretch" ItemTemplate="{StaticResource ProductTemplateWithImage}" Grid.Column="1"  Margin="5" ItemsSource="{Binding ElementName=lstProduct1,Path=ItemsSource}">
         </ListBox>
@@ -105,10 +151,24 @@
                 PropertyValueToHighlight="Travel">
                 </selector:SingleCriteriaHighightDataTemplateSelector>
             </ListBox.ItemTemplateSelector>
-
         </ListBox>
-        <ListBox x:Name="lstProduct4" HorizontalContentAlignment="Stretch" Grid.Column="1" Grid.Row="1" DisplayMemberPath="ModelName" Margin="5" ItemsSource="{Binding ElementName=lstProduct1,Path=ItemsSource}"></ListBox>
-
+        <ListBox x:Name="lstProduct4" HorizontalContentAlignment="Stretch" 
+                 Grid.Column="1" Grid.Row="1" ItemTemplate="{StaticResource TemplateExpand}"
+                 Margin="5" ItemsSource="{Binding ElementName=lstProduct1,Path=ItemsSource}"></ListBox>
+        <ListBox x:Name="lstProduct5"   
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 Grid.Column="0" Grid.Row="2" Margin="5" Grid.ColumnSpan="2"
+                 ItemTemplate="{StaticResource ProductTemplateWithImage}"
+                 ItemsSource="{Binding ElementName=lstProduct1,Path=ItemsSource}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+        <ListBox x:Name="lstProduct6" HorizontalContentAlignment="Stretch" 
+                 Grid.Column="2" Grid.Row="0" 
+                 Margin="5" ItemsSource="{Binding ElementName=lstProduct1,Path=ItemsSource}"></ListBox>
     </Grid>
 
 </local:BaseWindow>
