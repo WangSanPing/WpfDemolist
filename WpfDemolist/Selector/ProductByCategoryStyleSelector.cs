@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using StoreDatabase;
 
-namespace WpfDemolist.StyleSelectorClass
+namespace WpfDemolist.Selector
 {
     public class ProductByCategoryStyleSelector : StyleSelector
     {

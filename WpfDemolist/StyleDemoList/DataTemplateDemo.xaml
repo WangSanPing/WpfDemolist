@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfDemolist"
-                  xmlns:common="clr-namespace:WpfDemolist.Common"
+        xmlns:common="clr-namespace:WpfDemolist.Common"
+        xmlns:selector="clr-namespace:WpfDemolist.Selector"
         mc:Ignorable="d"
         Title="DataTemplateDemo" Height="630" Width="630">
     <Window.Resources>
@@ -52,6 +53,33 @@
                 </Border>
             </Grid>
         </DataTemplate>
+        <DataTemplate x:Key="DefaultTemplate">
+            <Border Margin="5" BorderThickness="1" BorderBrush="SteelBlue" CornerRadius="4">
+                <Grid Margin="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="{Binding Path=ModelNumber}"></TextBlock>
+                    <TextBlock Grid.Row="1" Text="{Binding Path=ModelName}"></TextBlock>
+                </Grid>
+            </Border>
+        </DataTemplate>
+
+        <DataTemplate x:Key="HighlightTemplate">
+            <Border Margin="5" BorderThickness="1" BorderBrush="SteelBlue" CornerRadius="4">
+                <Grid Margin="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock FontWeight="Bold" Text="{Binding Path=ModelNumber}"></TextBlock>
+                    <TextBlock FontWeight="Bold" Grid.Row="1" Text="{Binding Path=ModelName}"></TextBlock>
+                    <TextBlock FontWeight="Bold" Grid.Row="2" >重要！！！</TextBlock>
+                </Grid>
+            </Border>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -63,20 +91,22 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <ListBox x:Name="lstProduct1"  Margin="5" HorizontalContentAlignment="Stretch" Style="{StaticResource lstProductDisplay}">
-            <!--<ListBox.ItemContainerStyle>
-                <Style>
-                    <Setter Property="Control.Padding" Value="0"></Setter>
-                </Style>
-            </ListBox.ItemContainerStyle>-->
         </ListBox>
         <ListBox x:Name="lstProduct2" HorizontalContentAlignment="Stretch" ItemTemplate="{StaticResource ProductTemplateWithImage}" Grid.Column="1"  Margin="5" ItemsSource="{Binding ElementName=lstProduct1,Path=ItemsSource}">
-            <!--<ListBox.ItemContainerStyle>
-                <Style>
-                    <Setter Property="Control.Padding" Value="0"></Setter>
-                </Style>
-            </ListBox.ItemContainerStyle>-->
         </ListBox>
-        <ListBox x:Name="lstProduct3" HorizontalContentAlignment="Stretch" Grid.Row="1" DisplayMemberPath="ModelName" Margin="5" ItemsSource="{Binding ElementName=lstProduct1,Path=ItemsSource}"></ListBox>
+        <ListBox x:Name="lstProduct3" HorizontalContentAlignment="Stretch"
+                 Grid.Row="1" Margin="5"
+                 ItemsSource="{Binding ElementName=lstProduct1,Path=ItemsSource}">
+            <ListBox.ItemTemplateSelector>
+                <selector:SingleCriteriaHighightDataTemplateSelector
+                DefaultTemplate="{StaticResource DefaultTemplate}"
+                HighlightTemplate="{StaticResource HighlightTemplate}"
+                PropertyToEvaluate="CategoryName"
+                PropertyValueToHighlight="Travel">
+                </selector:SingleCriteriaHighightDataTemplateSelector>
+            </ListBox.ItemTemplateSelector>
+
+        </ListBox>
         <ListBox x:Name="lstProduct4" HorizontalContentAlignment="Stretch" Grid.Column="1" Grid.Row="1" DisplayMemberPath="ModelName" Margin="5" ItemsSource="{Binding ElementName=lstProduct1,Path=ItemsSource}"></ListBox>
 
     </Grid>

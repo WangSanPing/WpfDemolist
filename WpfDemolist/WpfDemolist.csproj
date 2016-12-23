@@ -80,14 +80,15 @@
     <Compile Include="DataBinding\DataFormatDemo.xaml.cs">
       <DependentUpon>DataFormatDemo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Selector\ProductByCategoryStyleSelector.cs" />
+    <Compile Include="Selector\ProductByCategoryStyleSelector2.cs" />
+    <Compile Include="Selector\SingleCriteriaHighightDataTemplateSelector.cs" />
     <Compile Include="StyleDemoList\DataTemplateDemo.xaml.cs">
       <DependentUpon>DataTemplateDemo.xaml</DependentUpon>
     </Compile>
     <Compile Include="StyleDemoList\StyleSelectorDemo.xaml.cs">
       <DependentUpon>StyleSelectorDemo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StyleSelectorClass\ProductByCategoryStyleSelector.cs" />
-    <Compile Include="StyleSelectorClass\ProductByCategoryStyleSelector2.cs" />
     <Compile Include="ValidationClass\NoBlankProductRule.cs" />
     <Compile Include="ValidationClass\PositivePriceRule.cs" />
     <Page Include="Controls\DataGridSelectColumn.xaml">

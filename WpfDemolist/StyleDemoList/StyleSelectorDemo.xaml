@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfDemolist"
-                  xmlns:selector="clr-namespace:WpfDemolist.StyleSelectorClass"
+                  xmlns:selector="clr-namespace:WpfDemolist.Selector"
         mc:Ignorable="d"
         Title="StyleSelectorDemo" Height="400" Width="540">
     <Grid>
