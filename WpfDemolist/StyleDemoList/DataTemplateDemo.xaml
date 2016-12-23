@@ -52,7 +52,7 @@
                         </Grid.RowDefinitions>
                         <TextBlock FontWeight="Bold" Text="{Binding Path=ModelNumber}"></TextBlock>
                         <TextBlock Grid.Row="1"  Text="{Binding Path=ModelName}"></TextBlock>
-                        <Image Grid.Row="2" Grid.RowSpan="2" Source="{Binding Path=ProductImagePath,Converter={StaticResource ImagePathConvert}}"></Image>
+                        <Image Width="100" Grid.Row="2" Grid.RowSpan="2" Source="{Binding Path=ProductImagePath,Converter={StaticResource ImagePathConvert}}"></Image>
                     </Grid>
                 </Border>
             </Grid>
