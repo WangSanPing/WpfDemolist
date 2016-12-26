@@ -83,6 +83,9 @@
     <Compile Include="Selector\ProductByCategoryStyleSelector.cs" />
     <Compile Include="Selector\ProductByCategoryStyleSelector2.cs" />
     <Compile Include="Selector\SingleCriteriaHighightDataTemplateSelector.cs" />
+    <Compile Include="StyleDemoList\ComboboxDemo.xaml.cs">
+      <DependentUpon>ComboboxDemo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StyleDemoList\DataTemplateDemo.xaml.cs">
       <DependentUpon>DataTemplateDemo.xaml</DependentUpon>
     </Compile>
@@ -174,6 +177,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ResourceDictionary\ListBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StyleDemoList\ComboboxDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

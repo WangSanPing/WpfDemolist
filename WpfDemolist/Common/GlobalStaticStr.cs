@@ -23,7 +23,8 @@ namespace WpfDemolist.Common
             BindToCollection,
             DataFormatDemo,
             StyleSelectorDemo,
-            DataTemplateDemo
+            DataTemplateDemo,
+            ComboBoxDemo
         }
     }
 }

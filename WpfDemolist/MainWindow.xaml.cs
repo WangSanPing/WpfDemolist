@@ -70,8 +70,10 @@ namespace WpfDemolist
                 case (int)GlobalStaticStr.WpfDemoList.DataTemplateDemo:
                     page = new DataTemplateDemo();
                     break;
+                case (int)GlobalStaticStr.WpfDemoList.ComboBoxDemo:
+                    page = new ComboboxDemo();
+                    break;
             }
-
             page.Show();
         }
     }

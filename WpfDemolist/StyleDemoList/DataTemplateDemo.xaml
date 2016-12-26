@@ -157,7 +157,7 @@
                  Margin="5" ItemsSource="{Binding ElementName=lstProduct1,Path=ItemsSource}"></ListBox>
         <ListBox x:Name="lstProduct5"   
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                 Grid.Column="0" Grid.Row="2" Margin="5" Grid.ColumnSpan="2"
+                 Grid.Column="0" Grid.Row="2" Margin="5" Grid.ColumnSpan="3"
                  ItemTemplate="{StaticResource ProductTemplateWithImage}"
                  ItemsSource="{Binding ElementName=lstProduct1,Path=ItemsSource}">
             <ListBox.ItemsPanel>
