@@ -77,7 +77,11 @@ namespace WpfDemolist
                 case (int)GlobalStaticStr.WpfDemoList.NavigateCollection:
                     page = new NavigateCollection();
                     break;
+                case (int)GlobalStaticStr.WpfDemoList.FilterViewDemo:
+                    page = new FilterViewDemo();
+                    break;
             }
+            
             page.Show();
         }
     }

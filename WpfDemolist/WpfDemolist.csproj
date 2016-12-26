@@ -80,9 +80,14 @@
     <Compile Include="DataBinding\DataFormatDemo.xaml.cs">
       <DependentUpon>DataFormatDemo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataView\FilterViewDemo.xaml.cs">
+      <DependentUpon>FilterViewDemo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataView\NavigateCollection.xaml.cs">
       <DependentUpon>NavigateCollection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataView\ProductByPriceFilterer.cs" />
+    <Compile Include="DataView\SortByModelNameLength.cs" />
     <Compile Include="Selector\ProductByCategoryStyleSelector.cs" />
     <Compile Include="Selector\ProductByCategoryStyleSelector2.cs" />
     <Compile Include="Selector\SingleCriteriaHighightDataTemplateSelector.cs" />
@@ -134,6 +139,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DataBinding\ProductDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataView\FilterViewDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

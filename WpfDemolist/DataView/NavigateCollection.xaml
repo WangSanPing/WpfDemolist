@@ -12,7 +12,8 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
         </Grid.RowDefinitions>
-        <ComboBox x:Name="cbb"  ItemsSource="{Binding }"  VerticalContentAlignment="Center" SelectedIndex="0" DisplayMemberPath="ModelName">
+        <!--IsSynchronizedWithCurrentItem属性是：是否和视图View同步-->
+        <ComboBox x:Name="cbb" IsSynchronizedWithCurrentItem="True"  ItemsSource="{Binding }"  VerticalContentAlignment="Center" SelectedIndex="0" DisplayMemberPath="ModelName">
 
         </ComboBox>
         <Border Grid.Row="1" Padding="7" Margin="7" Background="LightSteelBlue">
@@ -40,9 +41,9 @@
             </Grid>
         </Border>
         <StackPanel Grid.Row="2" Orientation="Horizontal"  Height="30">
-            <Button Click="btnPre_Click"  Width="15" Margin="7 0 0 0" Height="18" HorizontalAlignment="Left" x:Name="btnPre"></Button>
+            <Button Click="btnPre_Click"  Width="15" Margin="7 0 0 0" Height="18" HorizontalAlignment="Left" x:Name="btnPre">&lt;</Button>
             <Label   HorizontalContentAlignment="Center" Height="23"  x:Name="lblPosition"></Label>
-            <Button Click="btnNext_Click"  Width="15" Margin="3 0 0 0" Height="18" HorizontalAlignment="Left" x:Name="btnNext"></Button>
+            <Button Click="btnNext_Click"  Width="15" Margin="3 0 0 0" Height="18" HorizontalAlignment="Left" x:Name="btnNext">&gt;</Button>
         </StackPanel>
     </Grid>
 </local:BaseWindow>

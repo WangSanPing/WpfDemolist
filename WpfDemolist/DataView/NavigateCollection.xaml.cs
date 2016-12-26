@@ -23,6 +23,11 @@ namespace WpfDemolist.DataView
         private List<Product> _products;
         private ListCollectionView _lstView;
 
+        private delegate void getdelegate();
+
+        void getde() { }
+
+        void geted() { }
         public List<Product> Products
         {
             get
@@ -46,7 +51,7 @@ namespace WpfDemolist.DataView
             this.Loaded += (s, e) =>
             {
                 this.cbb.DataContext = this.Products;
-                this.cbb.SelectionChanged += Cbb_SelectionChanged;
+                //this.cbb.SelectionChanged += Cbb_SelectionChanged;
                 _lstView = CollectionViewSource.GetDefaultView(this.cbb.DataContext) as ListCollectionView;
                 _lstView.CurrentChanged += _lstView_CurrentChanged;
             };
