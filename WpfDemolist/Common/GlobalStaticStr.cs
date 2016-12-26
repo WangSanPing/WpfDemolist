@@ -24,7 +24,8 @@ namespace WpfDemolist.Common
             DataFormatDemo,
             StyleSelectorDemo,
             DataTemplateDemo,
-            ComboBoxDemo
+            ComboBoxDemo,
+            NavigateCollection
         }
     }
 }

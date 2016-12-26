@@ -80,6 +80,9 @@
     <Compile Include="DataBinding\DataFormatDemo.xaml.cs">
       <DependentUpon>DataFormatDemo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataView\NavigateCollection.xaml.cs">
+      <DependentUpon>NavigateCollection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Selector\ProductByCategoryStyleSelector.cs" />
     <Compile Include="Selector\ProductByCategoryStyleSelector2.cs" />
     <Compile Include="Selector\SingleCriteriaHighightDataTemplateSelector.cs" />
@@ -131,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DataBinding\ProductDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataView\NavigateCollection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -269,6 +276,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

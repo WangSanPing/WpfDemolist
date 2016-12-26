@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfDemolist"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="600">
+        Title="MainWindow" Height="700" Width="600">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -13,6 +13,7 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
@@ -67,6 +68,12 @@
                 ComboBoxDemo
             </Button>
         </StackPanel>
-
+        <StackPanel Margin="10" Grid.Column="0" Grid.Row="2">
+            <TextBlock Height="30" VerticalAlignment="Bottom" TextBlock.FontSize="15"  HorizontalAlignment="Left"
+                       Text="数据视图"></TextBlock>
+            <Button Height="40" Click="Button_Click"  Tag="12" >
+                NavigateCollection
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>

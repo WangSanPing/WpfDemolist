@@ -7,6 +7,7 @@ using WpfDemolist.ControlTemplateList;
 using WpfDemolist.CustomControlDemo;
 using WpfDemolist.DataBinding;
 using WpfDemolist.StyleDemoList;
+using WpfDemolist.DataView;
 
 namespace WpfDemolist
 {
@@ -72,6 +73,9 @@ namespace WpfDemolist
                     break;
                 case (int)GlobalStaticStr.WpfDemoList.ComboBoxDemo:
                     page = new ComboboxDemo();
+                    break;
+                case (int)GlobalStaticStr.WpfDemoList.NavigateCollection:
+                    page = new NavigateCollection();
                     break;
             }
             page.Show();
