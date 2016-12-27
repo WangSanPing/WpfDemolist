@@ -77,6 +77,10 @@
             <Button Height="40" Click="Button_Click"  Tag="13" >
                 FilterViewDemo
             </Button>
+            <Button Height="40" Click="Button_Click"  Tag="14" >
+                ViewGruopDemo
+            </Button>
+            
         </StackPanel>
     </Grid>
 </Window>

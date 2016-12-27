@@ -35,6 +35,10 @@ namespace WpfDemolist.DataView
 
                 ListCollectionView lcview = CollectionViewSource.GetDefaultView(this.lstProducts.ItemsSource) as ListCollectionView;
 
+                this.lstProductsGroup.ItemsSource = products;
+
+                ListCollectionView group = CollectionViewSource.GetDefaultView(this.lstProductsGroup.ItemsSource) as ListCollectionView;
+                group.GroupDescriptions.Add(new PropertyGroupDescription("CategoryName"));
                 //lcview.IsLiveFiltering = true;
                 //lcview.LiveFilteringProperties.Add("UnitCost");
             };
@@ -96,8 +100,9 @@ namespace WpfDemolist.DataView
         {
             ListCollectionView view = CollectionViewSource.GetDefaultView(lstProducts.ItemsSource) as ListCollectionView;
 
-            view.SortDescriptions.Clear();
-            view.SortDescriptions.Add(new SortDescription("ModelName", ListSortDirection.Ascending));
+            //view.SortDescriptions.Clear();
+            //view.SortDescriptions.Add(new SortDescription("ModelName", ListSortDirection.Ascending));
+            view.CustomSort = new SortByModelNameLength(); // 自定义排序。 按字母数量
         }
 
         private void btnDescending_Click(object sender, RoutedEventArgs e)

@@ -87,8 +87,12 @@
     <Compile Include="DataView\NavigateCollection.xaml.cs">
       <DependentUpon>NavigateCollection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataView\PriceRangeProductGrouper.cs" />
     <Compile Include="DataView\ProductByPriceFilterer.cs" />
     <Compile Include="DataView\SortByModelNameLength.cs" />
+    <Compile Include="DataView\ViewGruopDemo.xaml.cs">
+      <DependentUpon>ViewGruopDemo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Selector\ProductByCategoryStyleSelector.cs" />
     <Compile Include="Selector\ProductByCategoryStyleSelector2.cs" />
     <Compile Include="Selector\SingleCriteriaHighightDataTemplateSelector.cs" />
@@ -148,6 +152,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DataView\NavigateCollection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataView\ViewGruopDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

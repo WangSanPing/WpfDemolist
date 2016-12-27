@@ -80,6 +80,10 @@ namespace WpfDemolist
                 case (int)GlobalStaticStr.WpfDemoList.FilterViewDemo:
                     page = new FilterViewDemo();
                     break;
+                case (int)GlobalStaticStr.WpfDemoList.ViewGruopDemo:
+                    page = new ViewGruopDemo();
+                    break;
+                    
             }
             
             page.Show();
