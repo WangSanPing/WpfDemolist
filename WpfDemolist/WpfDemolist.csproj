@@ -58,6 +58,7 @@
     <Compile Include="BaseWindow.cs" />
     <Compile Include="Common\decimalConvert.cs" />
     <Compile Include="Common\GlobalStaticStr.cs" />
+    <Compile Include="Common\HalfOfNumber.cs" />
     <Compile Include="Common\ImagePathConvert.cs" />
     <Compile Include="Common\PriceToBackgroundConvert.cs" />
     <Compile Include="Controls\DataGridExtensions.cs" />

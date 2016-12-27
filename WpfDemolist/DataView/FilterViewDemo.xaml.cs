@@ -91,5 +91,21 @@ namespace WpfDemolist.DataView
                 view.Filter = null;
             }
         }
+
+        private void btnAscending_Click(object sender, RoutedEventArgs e)
+        {
+            ListCollectionView view = CollectionViewSource.GetDefaultView(lstProducts.ItemsSource) as ListCollectionView;
+
+            view.SortDescriptions.Clear();
+            view.SortDescriptions.Add(new SortDescription("ModelName", ListSortDirection.Ascending));
+        }
+
+        private void btnDescending_Click(object sender, RoutedEventArgs e)
+        {
+            ListCollectionView view = CollectionViewSource.GetDefaultView(lstProducts.ItemsSource) as ListCollectionView;
+
+            view.SortDescriptions.Clear();
+            view.SortDescriptions.Add(new SortDescription("ModelName", ListSortDirection.Descending));
+        }
     }
 }
