@@ -39,6 +39,8 @@ namespace WpfDemolist.DataView
 
                 ListCollectionView group = CollectionViewSource.GetDefaultView(this.lstProductsGroup.ItemsSource) as ListCollectionView;
                 group.GroupDescriptions.Add(new PropertyGroupDescription("CategoryName"));
+
+                // ↓↓↓ 下面的属性是设置实时更新 (实时成型)
                 //lcview.IsLiveFiltering = true;
                 //lcview.LiveFilteringProperties.Add("UnitCost");
             };
