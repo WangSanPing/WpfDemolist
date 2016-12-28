@@ -14,11 +14,22 @@
         <ListView x:Name="lst">
             <ListView.View>
                 <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="GridViewColumnHeader">
+                            <Setter Property="Background" Value="AliceBlue"></Setter>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
                     <GridView.Columns>
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=ModelName}">
                         </GridViewColumn>
                         <GridViewColumn Header="Model" DisplayMemberBinding="{Binding Path=ModelNumber}"></GridViewColumn>
-                        <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Path=UnitCost}"></GridViewColumn>
+                        <GridViewColumn  DisplayMemberBinding="{Binding Path=UnitCost}" Width="100">
+                            <GridViewColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <Button HorizontalAlignment="Stretch" Width="85" Content="价格" Click="Button_Click" ></Button>
+                                </DataTemplate>
+                            </GridViewColumn.HeaderTemplate>
+                        </GridViewColumn>
                         <GridViewColumn Header="Description" Width="300">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>

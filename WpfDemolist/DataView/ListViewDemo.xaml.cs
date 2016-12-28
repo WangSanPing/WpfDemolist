@@ -29,5 +29,13 @@ namespace WpfDemolist.DataView
                 this.lst.ItemsSource = App.StoreDB.GetProducts();
             };
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ListCollectionView view = CollectionViewSource.GetDefaultView(this.lst.ItemsSource) as ListCollectionView;
+
+            view.SortDescriptions.Clear();
+            view.SortDescriptions.Add(new SortDescription("UnitCost", ListSortDirection.Ascending));
+        }
     }
 }
