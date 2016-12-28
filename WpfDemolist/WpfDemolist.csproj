@@ -93,6 +93,7 @@
     <Compile Include="DataView\PriceRangeProductGrouper.cs" />
     <Compile Include="DataView\ProductByPriceFilterer.cs" />
     <Compile Include="DataView\SortByModelNameLength.cs" />
+    <Compile Include="DataView\TitleView.cs" />
     <Compile Include="DataView\ViewGruopDemo.xaml.cs">
       <DependentUpon>ViewGruopDemo.xaml</DependentUpon>
     </Compile>
@@ -221,6 +222,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StyleDemoList\StyleSelectorDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

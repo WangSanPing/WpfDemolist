@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:DataView="clr-namespace:WpfDemolist.DataView">
+    <Style x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type DataView:TileView},
+        ResourceId=TileView}"
+           TargetType="{x:Type ListView}"
+           BasedOn="{StaticResource {x:Type ListBox}}"></Style>
+
+    <Style x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type DataView:TileView},
+        ResourceId=TileViewItem}"
+           TargetType="{x:Type ListViewItem}"
+           BasedOn="{StaticResource {x:Type ListBoxItem}}"></Style>
+</ResourceDictionary>
