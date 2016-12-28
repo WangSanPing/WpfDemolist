@@ -5,17 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfDemolist"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="600">
+        Title="MainWindow" Height="600" Width="600">
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="230"></RowDefinition>
+            <RowDefinition Height="230"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Margin="10" Grid.Column="0" Grid.Row="0">
             <TextBlock Height="30" VerticalAlignment="Bottom" TextBlock.FontSize="15"  HorizontalAlignment="Left" Text="控件模板相关"> </TextBlock>
@@ -42,7 +43,7 @@
                 翻转问答
             </Button>
         </StackPanel>
-        <StackPanel Margin="10" Grid.Column="0" Grid.Row="1">
+        <StackPanel Margin="10" Grid.Column="3" Grid.Row="0">
             <TextBlock Height="30" VerticalAlignment="Bottom" TextBlock.FontSize="15"  HorizontalAlignment="Left"
                        Text="数据绑定"></TextBlock>
             <Button Height="40" Click="Button_Click"  Tag="6" >
@@ -55,7 +56,7 @@
                 数据格式化DEMO
             </Button>
         </StackPanel>
-        <StackPanel Margin="10" Grid.Column="1" Grid.Row="1">
+        <StackPanel Margin="10" Grid.Column="0" Grid.Row="1">
             <TextBlock Height="30" VerticalAlignment="Bottom" TextBlock.FontSize="15"  HorizontalAlignment="Left"
                        Text="样式"></TextBlock>
             <Button Height="40" Click="Button_Click"  Tag="9" >
@@ -68,8 +69,8 @@
                 ComboBoxDemo
             </Button>
         </StackPanel>
-        <StackPanel Margin="10" Grid.Column="0" Grid.Row="2">
-            <TextBlock Height="30" VerticalAlignment="Bottom" TextBlock.FontSize="15"  HorizontalAlignment="Left"
+        <StackPanel Margin="10" Grid.Column="1" Grid.Row="1" >
+            <TextBlock Height="30" VerticalAlignment="Bottom" TextBlock.FontSize="15"   HorizontalAlignment="Left"
                        Text="数据视图"></TextBlock>
             <Button Height="40" Click="Button_Click"  Tag="12" >
                 NavigateCollection
@@ -80,7 +81,18 @@
             <Button Height="40" Click="Button_Click"  Tag="14" >
                 ViewGruopDemo
             </Button>
+            <Button Height="40" Click="Button_Click"  Tag="15" >
+                ListViewDemo
+            </Button>
             
         </StackPanel>
+        <StackPanel Margin="10" Grid.Column="2" Grid.Row="1" >
+            <TextBlock Height="30" VerticalAlignment="Bottom" TextBlock.FontSize="15"   HorizontalAlignment="Left"
+                       Text=""></TextBlock>
+            <Button Height="40" Click="Button_Click"  Tag="16" >
+                NavigateCollection
+            </Button>
+        </StackPanel>
+
     </Grid>
 </Window>

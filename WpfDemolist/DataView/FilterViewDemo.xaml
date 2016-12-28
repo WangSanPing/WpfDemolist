@@ -63,5 +63,6 @@
                 </GroupStyle>
             </ListBox.GroupStyle>
         </ListBox>
+
     </Grid>
 </local:BaseWindow>

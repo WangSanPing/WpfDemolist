@@ -18,4 +18,5 @@ namespace WpfDemolist
 
         public virtual void showVisualTree(DependencyObject element) { }
     }
+
 }

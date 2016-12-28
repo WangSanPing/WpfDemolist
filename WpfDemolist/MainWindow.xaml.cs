@@ -83,7 +83,9 @@ namespace WpfDemolist
                 case (int)GlobalStaticStr.WpfDemoList.ViewGruopDemo:
                     page = new ViewGruopDemo();
                     break;
-                    
+                case (int)GlobalStaticStr.WpfDemoList.ListViewDemo:
+                    page = new ListViewDemo();
+                    break;
             }
             
             page.Show();
