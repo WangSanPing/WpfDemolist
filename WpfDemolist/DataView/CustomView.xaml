@@ -1,0 +1,63 @@
+﻿<local:BaseWindow x:Class="WpfDemolist.DataView.CustomView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDemolist"
+        xmlns:common="clr-namespace:WpfDemolist.Common"
+        xmlns:dataView="clr-namespace:WpfDemolist.DataView"
+        mc:Ignorable="d"
+        Title="CustomView" Height="400" Width="350">
+    <Window.Resources>
+        <common:ImagePathConvert x:Key="ImagePathConvert"></common:ImagePathConvert>
+        <GridView x:Key="GridView">
+            <GridView.Columns>
+                <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=ModelName}"></GridViewColumn>
+                <GridViewColumn Header="Model" DisplayMemberBinding="{Binding Path=ModelNumber}"></GridViewColumn>
+                <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Path=UnitCost}"></GridViewColumn>
+            </GridView.Columns>
+        </GridView>
+        <dataView:TileView x:Key="ImageView">
+            <dataView:TileView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Width="150" VerticalAlignment="Top">
+                        <Image Source="{Binding Path=ProductImagePath,Converter={StaticResource ImagePathConvert}}"></Image>
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" Text="{Binding Path=ModelName}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </dataView:TileView.ItemTemplate>
+        </dataView:TileView>
+        <dataView:TileView x:Key="ImageDetailView">
+            <dataView:TileView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="Col2"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Margin="5" Width="100"
+                               Source="{Binding Path=ProductImagePath,Converter={StaticResource ImagePathConvert}}"></Image>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                            <TextBlock FontWeight="Bold" Text="{Binding Path=ModelName}"></TextBlock>
+                            <TextBlock  Text="{Binding Path=ModelNumber}"></TextBlock>
+                            <TextBlock Text="{Binding Path=UnitCost}"></TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </dataView:TileView.ItemTemplate>
+        </dataView:TileView>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListView x:Name="lst" View="{StaticResource GridView}">
+        </ListView>
+        <ComboBox Grid.Row="1" x:Name="cbb" SelectionChanged="cbb_SelectionChanged">
+            <ComboBoxItem>GridView</ComboBoxItem>
+            <ComboBoxItem>ImageView</ComboBoxItem>
+            <ComboBoxItem>ImageDetailView</ComboBoxItem>
+        </ComboBox>
+    </Grid>
+</local:BaseWindow>

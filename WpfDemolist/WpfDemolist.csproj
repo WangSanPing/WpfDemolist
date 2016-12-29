@@ -81,6 +81,9 @@
     <Compile Include="DataBinding\DataFormatDemo.xaml.cs">
       <DependentUpon>DataFormatDemo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataView\CustomView.xaml.cs">
+      <DependentUpon>CustomView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataView\FilterViewDemo.xaml.cs">
       <DependentUpon>FilterViewDemo.xaml</DependentUpon>
     </Compile>
@@ -148,6 +151,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DataBinding\ProductDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataView\CustomView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

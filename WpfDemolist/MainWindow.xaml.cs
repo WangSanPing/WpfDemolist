@@ -86,6 +86,9 @@ namespace WpfDemolist
                 case (int)GlobalStaticStr.WpfDemoList.ListViewDemo:
                     page = new ListViewDemo();
                     break;
+                case (int)GlobalStaticStr.WpfDemoList.CustomView:
+                    page = new CustomView();
+                    break;
             }
             
             page.Show();

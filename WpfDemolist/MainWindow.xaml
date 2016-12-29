@@ -90,8 +90,9 @@
             <TextBlock Height="30" VerticalAlignment="Bottom" TextBlock.FontSize="15"   HorizontalAlignment="Left"
                        Text=""></TextBlock>
             <Button Height="40" Click="Button_Click"  Tag="16" >
-                NavigateCollection
+                CustomView
             </Button>
+            
         </StackPanel>
 
     </Grid>

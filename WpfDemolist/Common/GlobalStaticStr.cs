@@ -28,7 +28,8 @@ namespace WpfDemolist.Common
             NavigateCollection,
             FilterViewDemo,
             ViewGruopDemo,
-            ListViewDemo
+            ListViewDemo,
+            CustomView
         }
     }
 }
