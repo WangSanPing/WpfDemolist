@@ -89,6 +89,10 @@ namespace WpfDemolist
                 case (int)GlobalStaticStr.WpfDemoList.CustomView:
                     page = new CustomView();
                     break;
+                case (int)GlobalStaticStr.WpfDemoList.TreeViewDemo:
+                    page = new TreeViewDemo();
+                    break;
+                    
             }
             
             page.Show();

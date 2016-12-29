@@ -453,45 +453,59 @@
   </Products>
   <Categories>
     <CategoryID>14</CategoryID>
-    <UserID>1</UserID>
     <CategoryName>Communications</CategoryName>
   </Categories>
   <Categories>
     <CategoryID>15</CategoryID>
-    <UserID>1</UserID>
     <CategoryName>Deception</CategoryName>
   </Categories>
   <Categories>
     <CategoryID>16</CategoryID>
-    <UserID>1</UserID>
     <CategoryName>Travel</CategoryName>
   </Categories>
   <Categories>
     <CategoryID>17</CategoryID>
-    <UserID>2</UserID>
     <CategoryName>Protection</CategoryName>
   </Categories>
   <Categories>
     <CategoryID>18</CategoryID>
-    <UserID>2</UserID>
     <CategoryName>Munitions</CategoryName>
   </Categories>
   <Categories>
     <CategoryID>19</CategoryID>
-    <UserID>2</UserID>
     <CategoryName>Tools</CategoryName>
   </Categories>
   <Categories>
     <CategoryID>20</CategoryID>
-    <UserID>3</UserID>
     <CategoryName>General</CategoryName>
   </Categories>
-  <Users>
-    <UserID>3</UserID>
-    <UserName>我是3</UserName>
-    <UserID>1</UserID>
-    <UserName>我是1</UserName>
-    <UserID>2</UserID>
-    <UserName>我是2</UserName>
-  </Users>
+
+  <Categories>
+    <CategoryID>14</CategoryID>
+    <CategoryName>Communications</CategoryName>
+  </Categories>
+  <Categories>
+    <CategoryID>15</CategoryID>
+    <CategoryName>Deception</CategoryName>
+  </Categories>
+  <Categories>
+    <CategoryID>16</CategoryID>
+    <CategoryName>Travel</CategoryName>
+  </Categories>
+  <Categories>
+    <CategoryID>17</CategoryID>
+    <CategoryName>Protection</CategoryName>
+  </Categories>
+  <Categories>
+    <CategoryID>18</CategoryID>
+    <CategoryName>Munitions</CategoryName>
+  </Categories>
+  <Categories>
+    <CategoryID>19</CategoryID>
+    <CategoryName>Tools</CategoryName>
+  </Categories>
+  <Categories>
+    <CategoryID>20</CategoryID>
+    <CategoryName>General</CategoryName>
+  </Categories>
 </NewDataSet>

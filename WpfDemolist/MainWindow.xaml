@@ -92,7 +92,9 @@
             <Button Height="40" Click="Button_Click"  Tag="16" >
                 CustomView
             </Button>
-            
+            <Button Height="40" Click="Button_Click"  Tag="17" >
+                TreeViewDemo
+            </Button>
         </StackPanel>
 
     </Grid>

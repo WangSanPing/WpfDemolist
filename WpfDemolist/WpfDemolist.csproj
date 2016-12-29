@@ -97,6 +97,9 @@
     <Compile Include="DataView\ProductByPriceFilterer.cs" />
     <Compile Include="DataView\SortByModelNameLength.cs" />
     <Compile Include="DataView\TitleView.cs" />
+    <Compile Include="DataView\TreeViewDemo.xaml.cs">
+      <DependentUpon>TreeViewDemo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataView\ViewGruopDemo.xaml.cs">
       <DependentUpon>ViewGruopDemo.xaml</DependentUpon>
     </Compile>
@@ -167,6 +170,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DataView\NavigateCollection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataView\TreeViewDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -257,7 +264,6 @@
     </EmbeddedResource>
     <None Include="DB\store.xsc">
       <DependentUpon>store.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DB\store.xsd">
       <Generator>MSDataSetGenerator</Generator>
@@ -313,7 +319,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

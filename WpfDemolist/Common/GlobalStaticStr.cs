@@ -29,7 +29,8 @@ namespace WpfDemolist.Common
             FilterViewDemo,
             ViewGruopDemo,
             ListViewDemo,
-            CustomView
+            CustomView,
+            TreeViewDemo
         }
     }
 }
