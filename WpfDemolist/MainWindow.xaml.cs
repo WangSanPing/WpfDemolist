@@ -21,6 +21,8 @@ namespace WpfDemolist
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            //System.Console.WriteLine("asdasd");
+            //System.Console.Write("asdasd");
         }
 
         /// <summary>
@@ -92,7 +94,12 @@ namespace WpfDemolist
                 case (int)GlobalStaticStr.WpfDemoList.TreeViewDemo:
                     page = new TreeViewDemo();
                     break;
+                case (int)GlobalStaticStr.WpfDemoList.MouseMoveDataGrid:
+                    page = new MouseMoveDataGrid();
+                    break;
                     
+
+
             }
             
             page.Show();

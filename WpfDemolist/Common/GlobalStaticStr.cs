@@ -30,7 +30,8 @@ namespace WpfDemolist.Common
             ViewGruopDemo,
             ListViewDemo,
             CustomView,
-            TreeViewDemo
+            TreeViewDemo,
+            MouseMoveDataGrid
         }
     }
 }

@@ -90,6 +90,9 @@
     <Compile Include="DataView\ListViewDemo.xaml.cs">
       <DependentUpon>ListViewDemo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataView\MouseMoveDataGrid.xaml.cs">
+      <DependentUpon>MouseMoveDataGrid.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataView\NavigateCollection.xaml.cs">
       <DependentUpon>NavigateCollection.xaml</DependentUpon>
     </Compile>
@@ -166,6 +169,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DataView\ListViewDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataView\MouseMoveDataGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
